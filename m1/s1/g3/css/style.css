@@ -1,0 +1,56 @@
+#container {
+    width: 700px;
+    margin: 0 auto;
+    font-family: 'EB Garamond', serif;
+}
+
+#titolo1 {
+text-align: center;
+}
+
+#featured {
+color: orange;
+}
+
+#cranberry {
+    color:  #318687;
+   
+}
+
+#caption {
+text-align: center;
+color: gray;
+}
+
+#undercaption {
+    line-height: 30%;
+    font-size: 1.3rem;
+    border-left: 1px solid orange;
+    padding-left: 5px ;
+}
+
+
+h5 {
+    text-align: center;
+    color:  #318687
+}
+
+#logo {
+   text-align: center;
+   border-bottom: 1px solid orange;
+}
+
+
+
+
+#ingredients {
+    border-bottom: 1px solid#318687;
+}
+
+#method{
+    border-bottom: 1px solid#318687;
+}
+
+#footer {
+    text-align: center;
+}
