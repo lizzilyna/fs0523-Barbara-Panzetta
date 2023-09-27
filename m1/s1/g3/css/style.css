@@ -33,12 +33,14 @@ color: gray;
 
 h5 {
     text-align: center;
-    color:  #318687
+    color:  #318687;
+    background-color: rgb(244, 236, 220);
+    border-top: 1px solid orange;
 }
 
 #logo {
    text-align: center;
-   border-bottom: 1px solid orange;
+   
 }
 
 
