@@ -9,8 +9,32 @@ body {
 background-image: url(../assets/img/sfondo.png);
 background-attachment: fixed;
 font-family: 'Poppins', sans-serif;
+font-size: 1rem;
 }
 
+h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h6 {
+    font-size: 1.1rem;
+}
 
 #titolo {
  padding-top: 0;
@@ -55,3 +79,4 @@ h1
     padding-bottom: 20px;
   
 }
+
