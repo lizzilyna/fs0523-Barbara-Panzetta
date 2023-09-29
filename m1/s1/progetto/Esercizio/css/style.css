@@ -1,0 +1,148 @@
+body {
+    font-family: 'Montserrat', sans-serif, 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    
+        }
+
+
+
+
+img {
+    max-width: 100%;
+}
+
+* {box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {font-size: 2.5rem;}
+
+h2 {font-size: 2rem;}
+
+h3 {font-size: 1.2rem;
+font-weight: bold;
+color: #25a2c3}
+
+h4 {font-size: 2.2rem;}
+
+h5 {font-size: 2.1rem;}
+
+h6 {font-size: 2rem;}
+
+ol {
+    list-style: decimal;
+    list-style-position: inside;
+    }
+
+ul {
+    list-style: disc;
+    list-style-position: inside;
+}
+
+
+
+header {
+   
+    text-align: center;
+    }
+
+header, h1{
+    font-weight: bold;
+    color: #25a2c3;
+    line-height: 1.1;
+    padding: 50px;
+    padding-top: 70px;
+    padding-bottom: 10px;
+}
+
+
+
+.header {
+    padding: 40px;
+    font-size: 1.4rem;
+    color: black;
+}
+
+
+header, p {
+    
+    padding: 40px;
+    padding-top: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+    }
+
+#logo {
+    background-color: black;
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    border-radius: 0%;
+}
+
+header{
+    
+}
+
+#banner {
+    background-image: url(../images/banner.jpg);
+}
+
+input {
+    background-color: #f04c2f;
+    padding: 17px 37px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border-radius:5px;
+    }
+
+    header, #box {
+        padding: 0;
+        
+    }
+
+    .paragrafi {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .paragrafi p {
+        font-size: 1rem;
+    }
+
+
+    .notebook {
+        border-radius: 100%;
+        margin: 20px;
+    }
+
+
+    .container {
+        background-color: #f04c2f;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+
+    footer .container {
+        background-color: #25a2c3;
+        color: white;
+    }
+
+    footer a {
+        color: white;
+    }
+
+    .boxino {
+        border: 1px solid gray;
+        margin: 20px;
+    }
