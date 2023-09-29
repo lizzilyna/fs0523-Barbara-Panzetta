@@ -145,6 +145,7 @@ input {
     footer .container {
         background-color: #25a2c3;
         color: white;
+        margin-bottom: 0;
     }
 
     footer a {
