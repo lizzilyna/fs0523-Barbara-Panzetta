@@ -120,10 +120,17 @@ const characters = [
   Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
 
-for (let x = starWarsCharacters[0].name; x < starWarsCharacters.length; [x++]) {console.log()}
+//for (let x = starWarsCharacters[0].name; x < starWarsCharacters.length; [x++]) {console.log()}
 
+let personaggio = starWarsCharacters[0];
+let nomePersonaggio =starWarsCharacters[0].name;
 
+for (let i = 0; i < starWarsCharacters.length; i++)
+{let personaggioCorrente = starWarsCharacters[i];
+characters.push (personaggioCorrente.name);
+}
 
+console.log = (characters)
 
 
 /* ESERCIZIO 3
