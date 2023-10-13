@@ -252,6 +252,17 @@ for (let i = 0; i < tagTd.length; i++) {
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+function addRed() {
+  const links = document.getElementsByTagName('a');
+
+  for (let i = 0; i < links.length; i++) {
+      links[i].style.backgroundColor = 'red';
+  }
+}
+
+
+addRed();
+
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
