@@ -43,7 +43,7 @@ img {
 
 .viola {
     background-image: linear-gradient(to top, hsl(300, 100%, 25%), hsl(300, 59%, 60%), white);
-    transform: rotate(-9);
+    transform: rotate(-9deg);
     /*background-image: linear-gradient(var(--viola) 0%, var(--viola) 75%, #8b8c9b 90%, #8b8c9b 100%);*/
 }
 
@@ -68,12 +68,12 @@ img {
 }*/
 
 
-#p3 {
+.postit {
     transition: transform 0.3s;
-    transform: rotate(-9deg);
+    
 }
 
-#p3:hover {
+.postit:hover {
     transform: scale(1.5) rotate(0deg);
     cursor: pointer;
     z-index: 1;
