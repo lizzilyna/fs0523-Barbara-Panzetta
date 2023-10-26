@@ -1,0 +1,88 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+
+
+body {
+    font-family: 'Bree Serif', serif;
+    box-sizing: border-box;
+}
+
+#testoAlternato {
+    font-size: 1em;
+    line-height: 1.4em;
+    width: 25em;
+    border: 1px solid black;
+    padding: 1em;
+    position: relative;
+    display: inline-block;
+}
+
+.parole {
+    margin-left: 3px
+}
+
+#interfacce
+{display: inline-block;
+position: absolute;
+animation: cambioParola 5s linear infinite;
+opacity: 0;
+animation-delay: 0s;
+
+}
+
+#single
+{display: inline-block;
+ position: absolute;
+ animation: cambioParola1 5s linear infinite;;
+ opacity: 0;
+ animation-delay: 5s;
+}
+
+#app
+{display: inline-block;
+ position: absolute;
+ animation: cambioParola2 5s linear infinite;;
+ opacity: 0;
+ animation-delay: 10s;
+}
+
+
+   /* @keyframes cambioParola {
+        0% {opacity: 0; top: 0};
+        25% {opacity: 0; top: 0}
+        50% {opacity:1; top: 50px}
+        75% {opacity: 0; top: 0}
+        100% {opacity: 0; top: 0}
+    }*/
+
+   @keyframes cambioParola {
+        0% {opacity: 0; };
+        25% {opacity: 0;}
+        50% {opacity:1; }
+        75% {opacity: 0; }
+        100% {opacity: 0;}
+    }
+
+
+    @keyframes cambioParola1 {
+        0% {opacity: 0};
+        25% {opacity: 0;}
+        50% {opacity: 0;}
+        75% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+
+    @keyframes cambioParola2 {
+        0% {opacity: 0};
+        25% {opacity: 0;}
+        50% {opacity:0;}
+        75% {opacity: 0;}
+        100% {opacity: 1;}
+    }
