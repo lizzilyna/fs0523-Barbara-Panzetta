@@ -1,0 +1,80 @@
+body {
+font-family: 'Indie Flower', cursive;
+line-height: 1.8em;
+}
+
+img {
+    max-width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.title {
+    font-weight: bold;
+    font-size: 1.9rem;
+}
+
+.subtitle {
+    font-size: 1.7rem
+}
+
+.postit {
+    width: 23%;
+    height: 30%;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin:1%;
+    box-shadow: 5px  5px 5px;
+    }
+
+.viola {
+    background-image: linear-gradient(to top, hsl(300, 100%, 25%), hsl(300, 59%, 60%), white);
+    transform: rotate(-9);
+    /*background-image: linear-gradient(var(--viola) 0%, var(--viola) 75%, #8b8c9b 90%, #8b8c9b 100%);*/
+}
+
+.giallo {
+    background-image: linear-gradient(to top, hsl(60, 100%, 46%), hsl(60, 59%, 60%), white);
+    transform: rotate(-5deg);
+
+    /*background-image: linear-gradient(var(--giallo) 0%, var(--giallo) 75%, #bdbda3 90%, #bdbda3 100%);*/
+}
+
+.verde {
+    background-image: linear-gradient(to top, hsl(100, 94%, 48%), hsl(100, 59%, 60%),  white);
+    transform: rotate(5deg);
+    
+    /*background-image: linear-gradient(var(--verde) 0%, var(--verde) 75%, #a1b8a1 90%, #a1b8a1 100%);*/
+}
+
+/*:root {
+    --giallo: #fefece;
+    --verde: #ccfece;
+    --viola: #8b8c9b;
+}*/
+
+
+#p3 {
+    transition: transform 0.3s;
+    transform: rotate(-9deg);
+}
+
+#p3:hover {
+    transform: scale(1.5) rotate(0deg);
+    cursor: pointer;
+    z-index: 1;
+}
