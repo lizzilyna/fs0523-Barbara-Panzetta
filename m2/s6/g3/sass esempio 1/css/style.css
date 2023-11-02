@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 16px;
+  font-family: "Helvetica", sans-serif;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+}
+
+a {
+  font-size: 12px;
+  font-family: "Helvetica", sans-serif;
+}
+
+.my-button {
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+.my-button:hover {
+  background-color: #217dbb;
+}
+
+h1 {
+  color: red;
+}/*# sourceMappingURL=style.css.map */

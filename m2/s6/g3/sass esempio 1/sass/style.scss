@@ -1,8 +1,12 @@
-@import 'variabili';
 @import 'partials/reset';
+@import 'variabili';
+@import 'partials/mixins';
 @import 'partials/colors';
 @import 'partials/font';
 @import 'partials/spacings';
 @import 'partials/buttons';
-@import 'partials/mixins';
 @import 'partials/animations';
+
+h1 {
+    color: red;
+}
