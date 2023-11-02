@@ -1,0 +1,24 @@
+@mixin floating {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+  }
+
+  
+  @mixin button-style($background) {
+    background-color: $background;
+    color: $colore-testo;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+  
+    &:hover {
+      background-color: darken($background, 10%);
+    }
+  }
+  
+  
