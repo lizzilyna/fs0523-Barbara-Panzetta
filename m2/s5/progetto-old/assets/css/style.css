@@ -1,0 +1,190 @@
+
+body {
+    font-family: 'Spectral', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+* {box-sizing: border-box;
+}
+
+
+
+
+/* HEADER */
+.sticky-header {
+ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    font-size: 0.8rem;
+    padding-left: 130px;
+   
+}
+
+.header-container {
+    background-color: #FFC017;
+    border-bottom: 1px solid black;
+    height: 80px; 
+    display: flex;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    
+   
+}
+
+.logo {
+    display: block;
+    flex-basis: 50%;
+    margin-left: 0;
+}
+
+#navlist {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+
+    }
+
+
+.navli a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+a.topbutton {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+
+/* HERO */
+
+.hero-wrap {
+    background-color: #FFC017;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero {
+    padding-left: 130px;
+    padding-right: auto;
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.curious {
+    flex-basis: 40%;
+    padding-bottom: 4rem;
+}
+
+.hero h1 {
+    font-family: 'Spectral', sans-serif; 
+    font-size: 4.4rem; 
+    margin-bottom: 2rem; 
+}
+
+.hero p {
+    color: black;
+    font-size: 1.3em; 
+    margin-bottom: 3rem; 
+}
+
+a.big-button {
+    background-color: black;
+    color: white;
+    padding: 0.5em 3em;
+    margin-bottom: 2em;
+    border-radius: 2em;
+    text-decoration: none; 
+}
+
+
+.decoration {
+    overflow: hidden;
+}
+
+.decoration iframe {
+    flex-basis: 50%;
+    height: 20rem;
+}
+
+
+/* INIZIO MAIN */
+.article-preview {
+    
+    margin: 0 10px 20px; 
+    padding: 20px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.author img {
+    width: 25px;
+    height: 25px; 
+    border-radius: 50%; 
+    margin-right: 10px;
+}
+
+h2 {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 0.6em;
+    color: #888;
+}
+
+.name {
+    font-size: 0.7em;
+    color: black;
+    font-weight: bold;
+}
+
+.trending-section {
+    margin-left: 130px;
+    margin-right: 130px;
+}
+
+.article-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.article-preview {
+    flex-basis: calc(30% - 10px); 
+    margin-bottom: 20px;
+}
+
+
+
+.trending-section h2 {
+    display: inline-block;
+}
+
+.trending-section i.fas.fa-arrow-trend-up {
+font-size: 15px;
+border: 1px solid black;
+padding: 0.4%;
+border-radius: 100%;
+margin-right: 4px;
+}
