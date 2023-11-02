@@ -1,0 +1,18 @@
+@import 'variabili';
+
+$colore: red;
+
+h1 {
+    color: $colore;
+    font-size: 12px;
+    background-color: yellow;
+}
+
+
+$misure: 15, 30, 45;
+
+@each $m in $misure{
+    .mt-#{$m}{
+margin-top: $m + px;
+    }
+}
