@@ -1,9 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-}
-
 h1 {
   font-size: 16px;
   font-family: "Helvetica", sans-serif;
@@ -15,6 +9,42 @@ h1 {
 a {
   font-size: 12px;
   font-family: "Helvetica", sans-serif;
+}
+
+.margine-top-12 {
+  margin-top: 12px;
+}
+
+.margine-top-16 {
+  margin-top: 16px;
+}
+
+.margine-top-24 {
+  margin-top: 24px;
+}
+
+.pt-sm {
+  padding-top: 12px;
+}
+
+.pt-normal {
+  padding-top: 16px;
+}
+
+.pt-md {
+  padding-top: 24px;
+}
+
+.pt-lg {
+  padding-top: 36px;
+}
+
+.pt-xl {
+  padding-top: 48px;
+}
+
+.pt-xxl {
+  padding-top: 160px;
 }
 
 .my-button {
