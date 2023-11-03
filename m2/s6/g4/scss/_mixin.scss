@@ -1,0 +1,12 @@
+@mixin quadrato($size: 500pz) {
+    width: ();
+    height: ();
+}
+
+//è un parametro che può essere definito o lasciato vuot0
+
+/*@mixin breakpoint($misura){
+    @if ($misura == desktop) {
+        @media screen and {min-width: 1440px} 
+        @content;
+   

@@ -1,0 +1,10 @@
+@function contrast ($colore, $contrastPerc: 10){
+    @if (lightness($colore)> 50) {
+        @return darken($colore, $contrastPerc);
+    } @else {
+      @return lighten($colore,$contrastPerc);
+    }
+}
+
+
+//accetta un colore in ingresso e ne dà uno a contrasto per migliorare la leggibilità; se lightness>50 scurisci del 10%

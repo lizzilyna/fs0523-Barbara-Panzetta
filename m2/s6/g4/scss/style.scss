@@ -1,0 +1,32 @@
+
+$nomeVariabile: rgb(255, 255, 255);
+
+h1{
+    color: red; //posso mettere più valori in un variabile e poi selezionarla con nth
+}
+.bg {
+    background-image: url();
+}
+
+h2{font-size: map-get($sizes, xxl );
+span{color: $nomeVariabile;
+&:hover{
+    text-decoration: line-through;
+}}};
+
+.testo{
+    &-paragrafo{ //se il testo richiama il nome del genitore posso scrivere &-
+        color: blue;
+    }
+}
+
+.spazi {
+    padding: 50px;
+}
+
+.spazi-rosso{
+    @extend .spazi;
+    background-color: red;
+}
+
+//prendi ciò che fa spazi e aggiungi; controlla i duplicati e li rimuove. "unione intelligente", se do una nuova proprietà che è giù nell'importato la toglie a quello.
