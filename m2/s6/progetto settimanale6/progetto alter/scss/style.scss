@@ -154,6 +154,10 @@ footer {
   margin-top: 0;
 }
 
+.strive-large {
+  display: block;
+}
+
 @media (max-width: 768px){
 .strive {
   display: inline-block;
@@ -170,4 +174,8 @@ footer {
 
 .img-fluid {
   width: 25px;
+}
+
+.navbar-brand_set {
+  width: 2rem;
 }
