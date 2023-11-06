@@ -1,0 +1,173 @@
+@import'reset';
+@import'../node_modules/bootstrap/scss/functions';
+@import'variables';
+@import'mixin';
+@import'../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+* img {
+ max-width: 100%;
+}
+
+body {
+ box-sizing: border-box;
+}
+
+.logo-set img {
+  height: 100%;
+  width: auto;
+}
+
+
+#kids a {
+text-decoration: none;
+color: white;
+display:flex;}
+
+.icon 
+
+{padding-left: 7px;
+padding-right: 7px;
+width: 27px;
+position: absolute;}
+
+.tvshow {
+ background-color: $blue;
+ color: white;
+ padding-left: 1.1rem;
+ padding-bottom: 2rem;
+ h1 {
+  
+  font-weight: bold;
+  display: inline-block;
+ }
+}
+
+.form-select {
+ width: 8rem;
+ background-color: black;
+ color: white;
+  img {
+  color: white;
+  }
+}
+
+footer {
+ background-color: #333; 
+ padding: 20px; 
+  a {
+  color: white;
+  } 
+  button {
+   
+   text-align: center;
+  }  
+}
+
+
+.wrapper {
+ background: linear-gradient(to bottom, #000000, #222222);
+ color: white;}
+
+.edit h3 {
+ font-size: 7rem;
+}
+
+#bassa {
+ height: 30px; 
+}
+
+.blue a {
+ font-size: 0.5rem;
+ color: #323ea8;
+ font-weight: bold;
+ text-decoration: none;
+ 
+}
+
+#paypal {
+  width: 4rem;
+}
+
+.ultra-hd {
+  width: 7rem;
+}
+
+.btn.btn-light {
+  border: 1px solid gray;
+  font-weight: bold;
+}
+
+
+.flex-container {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox {
+  display: block;
+}
+
+#navbar {height: 3rem;
+
+
+  
+}
+
+.student {
+        background-color: #555353;
+        color: white;
+        display: inline-block;
+      
+        
+}
+
+
+
+.select {
+  background-color: #000000;
+  color: white;
+}
+
+
+.large {
+  padding-right: 1rem;
+  background-color: #212020;
+}
+
+.edit {
+  display: inline-block;
+  color: white;
+  border: 1px solid white;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+
+#navbar {
+  padding-bottom: 10rem;
+}
+
+#navbar .row {
+  margin-top: 0;
+}
+
+@media (max-width: 768px){
+.strive {
+  display: inline-block;
+  padding-right: 0rem;}
+.avatarS img {
+  display: none;
+} }
+
+
+.carousel-indicators li {
+  margin: 0;
+}
+
+
+.img-fluid {
+  width: 25px;
+}

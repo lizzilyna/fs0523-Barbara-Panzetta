@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+ <!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+ <link rel="stylesheet" href="css/style.css">
+
+ <title>Netflix</title>
+</head>
+
+<body>
+<div class="wrapper-big bg-primary">
+ <div id="navbar">
+ 
+ 
+ <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid">
+  <div class="row">
+   <div class="col-2">
+   <a class="navbar-brand" href="#"><img src="Netflix-assets/assets/netflix_logo.png" alt=""></a>
+   </div>
+
+
+   <div class="col-7 pt-4"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+   <li class="nav-item">
+   <a class="nav-link active" aria-current="page" href="#">Home</a>
+   </li>
+   <li class="nav-item">
+   <a class="nav-link text-nowrap" href="#">Tv Shows</a>
+   </li>
+   <li class="nav-item">
+   <a class="nav-link" href="#">Movies</a>
+   </li>
+   <li class="nav-item">
+    <a class="nav-link text-nowrap" href="#">Recently Added</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-nowrap" href="#">My List</a>
+      </li>
+   
+
+   </li>
+   <li class="nav-item">
+   <a class="nav-link disabled" aria-disabled="true"></a>
+   </li>
+  </ul>
+  </div>
+   </div>
+
+  
+  <div class="d-none d-md-block col-md-3 col-lg-3 col-xl-3 pt-4">
+  
+
+
+ <div class="btn-toolbar mb-3 d-flex justify-content-end">
+  <div class="btn-group me-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-outline-secondary"><i class="bi bi-search"></i></button>
+    <button type="button" class="btn btn-outline-secondary">KIDS</button>
+    <button type="button" class="btn btn-outline-secondary"><i class="bi bi-bell-fill"></i></button>
+    <button type="button" class="btn btn-outline-secondary">
+      <img class="img-fluid" src="Netflix-assets/assets/kids_icon.png"> </button>
+      <button type="button" class="btn btn-outline-secondary"><i class="bi bi-caret-down-fill"></i></button>
+  </div>
+
+  </div>
+  </nav>
+ 
+ </div>
+
+<main>
+ <div class="tvshow">
+ <div class="container-fluid" bg="dark">
+ 
+  <div class="row">
+  <div class="col-2">
+  <h1>TV Shows</h1>
+  </div>
+ 
+  <div class="col-2">
+  <select class="form-select bg-primary" aria-label="Default select example">
+   <option selected>Genres</option>
+   <option value="1">One</option>
+   <option value="2">Two</option>
+   <option value="3">Three</option>
+   </select>
+  </div>
+  <span class="placeholder col-6 bg-primary pb-3"></span>
+  <div class="col-md-2 col-lg-2 col-xl-2"><div class="btn-toolbar mb-3 d-flex justify-content-end" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group me-2" role="group" aria-label="First group">
+     <button type="button" class="btn btn-outline-secondary"><i class="bi bi-text-left"></i></button>
+      <button type="button" class="btn btn-outline-secondary"><i class="bi bi-fullscreen"></i></button>
+    </div></div>
+ </div>
+ </div>
+
+
+<!--CAROSELLO-->
+
+ <div id="carouselExample" class="carousel slide">
+  <h4 class="pt-3">Trending Now</h4>
+  <div class="carousel-inner">
+   
+    <div class="carousel-item">
+      <div class="row mx-0">
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media10.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media11.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media12.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media13.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media15.jpg" class="d-block w-100" alt="...">
+      </div>
+      </div>
+    </div>
+
+
+    <div class="carousel-item">
+      <div class="row mx-0">
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media17.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media18.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media20.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media24.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media27.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media28.jpg" class="d-block w-100" alt="...">
+      </div>
+      </div>
+    </div>
+
+    <div class="carousel-item active">
+      <div class="row mx-0">
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media29.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media32.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media23.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media0.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media14.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media16.webp" class="d-block w-100" alt="...">
+      </div>
+      </div>
+    </div>
+
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+ <!-- fine Carosello  -->
+
+ 
+ <div id="carouselExample" class="carousel slide">
+  <h4 class="pt-3">Watch It Again</h4>
+  <div class="carousel-inner">
+   
+    
+    <div class="carousel-item">
+      <div class="row mx-0">
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media29.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media32.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media23.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media0.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media14.webp" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media16.webp" class="d-block w-100" alt="...">
+      </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="row mx-0">
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media10.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media11.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media10.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media11.jpg" class="d-block w-100" alt="...">
+      </div>
+      </div>
+    </div>
+
+    <div class="carousel-item active">
+      <div class="row mx-0">
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media10.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media11.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media10.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media11.jpg" class="d-block w-100" alt="...">
+      </div>
+      </div>
+    </div>
+
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+ <!-- fine Carosello  -->
+
+ 
+ <div id="carouselExample" class="carousel slide">
+  <h4 class="pt-3">New Releases</h4>
+  <div class="carousel-inner">
+   
+   
+    <div class="carousel-item">
+      <div class="row mx-0">
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media17.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media18.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media20.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media24.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media27.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media28.jpg" class="d-block w-100" alt="...">
+      </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="row mx-0">
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media10.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media11.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media10.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media11.jpg" class="d-block w-100" alt="...">
+      </div>
+      </div>
+    </div>
+
+    <div class="carousel-item active">
+      <div class="row mx-0">
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media1.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media10.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+          <img src="Netflix-assets/assets/media/media11.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media10.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="col-2 px-0 border border-dark">
+        <img src="Netflix-assets/assets/media/media11.jpg" class="d-block w-100" alt="...">
+      </div>
+      </div>
+    </div>
+
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+ <!-- fine Carosello  -->
+ 
+</div>
+
+<footer>
+
+ <div class="container">
+ 
+ <div id="social" class="row">
+ 
+  <div class="col-1">
+   <a class="navbar-text text-white mr-3" href="#">
+   <i class="bi bi-facebook"></i> </a>
+  </div>
+  
+  <div class="col-1">
+   <a class="navbar-text text-white mr-3" href="#">
+   <i class="bi bi-instagram"></i> </a>
+  </div>
+ 
+  <div class="col-1">
+   <a class="navbar-text text-white mr-3" href="#">
+   <i class="bi bi-twitter"></i> </a>
+  </div>
+
+  <div class="col-1">
+   <a class="navbar-text text-white mr-3" href="#">
+   <i class="bi bi-youtube"></i> </a>
+  </div>
+  <div class=" col-2"></div> 
+ </div>
+ 
+
+ <div class="row px-3 mt-4">
+ 
+  
+ <div class="container mb-5">
+  <div id="social" class="row mt-4">
+      <div class="col-12 mb-2 col-sm-12 mb-2 col-md-3">
+      <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Audio and subtitles</a></h6>
+      <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Media Center</a></h6>
+      <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Privacy</a></h6>
+      <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Contact Us</a></h6>
+       
+     </div>
+      <div class="col-12 mb-2 col-sm-12 mb-2 col-md-3">
+        <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Audio Description</a></h6>
+        <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Investors Relations</a></h6>
+        <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Legal notices</a></h6>
+        
+      </div>
+      <div class="col-12 mb-2 col-sm-12 mb-2 col-md-3">
+        <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Help Center</a></h6>
+        <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Jobs</a></h6>
+        <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Cookies Preferencies</a></h6>
+        
+      </div>
+      <div class="col-12 mb-2 col-sm-12 mb-2 col-md-3">
+        <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Gift Cards</a></h6>
+        <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Terms of Use</a></h6>
+        <h6 class="lh-1"><a class="text-white link-offset-3 link-underline link-underline-opacity-0" href="#">Corporate Information</a></h6>
+        
+      </div>
+ 
+
+ 
+ <div class=" col-2"></div> 
+ 
+ <div class="row px-3">
+ 
+ <div class="col-3">
+ <a class="btn btn-primary border border-white mx-0 mb-3" href="#" role="button">Service Code</a></div>
+ <p class="text-white">&copy 1997-2019 Netflix Inc.</p>
+ </div>
+</main>
+
+</footer>
+
+</div>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
