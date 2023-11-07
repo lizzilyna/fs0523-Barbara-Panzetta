@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <p id="savedName"></p>
+    <input type="text" id="nome" placeholder="Inserisci il tuo nome">
+    <button onclick = "salva()">salva</button>
+    <button onclick = "rimuovi()">rimuovi</button>
+
+
+<script>
+    function salva(){
+    let nome= document.getElementById('nome').value;
+    localStorage.setItem ('name', nome);
+    document.getElementById('savedName').innerText='Nome salvato: '+nome;
+}
+
+     
+</script>
+
+
+
+</body>
+</html>
