@@ -21,8 +21,11 @@
     document.getElementById('savedName').innerText='Nome salvato: '+nome;
 }
 
-     
-</script>
+     function rimuovi(){
+        localStorage.removeItem('name');
+        document.getElementById('savedName')
+        innerText='Nome Rimosso'
+        </script>
 
 
 
