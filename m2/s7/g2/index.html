@@ -12,10 +12,10 @@
     <input type="text" id="nome" placeholder="Inserisci il tuo nome">
     <button onclick = "salva()">salva</button>
     <button onclick = "rimuovi()">rimuovi</button>
-
+<div id="tempo"></div>
 
 <script>
-    function salva(){
+  {  function salva(){
     let nome= document.getElementById('nome').value;
     localStorage.setItem ('name', nome);
     document.getElementById('savedName').innerText='Nome salvato: '+nome;
@@ -23,7 +23,25 @@
 
      function rimuovi(){
         localStorage.removeItem('name');
-        document.getElementById('savedName').innerText='Nome Rimosso';}
+        document.getElementById('savedName').innerText='Nome Rimosso';}}
+
+  let contatore=0
+        let tempoSalvato =sessionStorage.getItem('tempo');
+        if(!tempoSalvato){
+            contatore=0;
+        }else{
+            contatore=tempoSalvato;
+        }
+      
+let tempoHTML=document.querySelector('#tempo')
+
+setInterval(()=>{
+    tempoHTML.innerText=contatore;
+    sessionStorage.setItem('tempo',contatore)
+    contatore++;
+},1000)
+
+
         </script>
 
 

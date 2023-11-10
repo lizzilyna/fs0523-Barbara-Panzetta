@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row" id="target">
+        
+    </div>
+</div>
+<template>     
+  <div class="card">
+      <img src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item card-price"></li>
+      </ul>
+      <div class="card-body">
+        <button class="btn btn-primary addToCart">Add To cart</button>
+      </div>
+    </div>
+</div>
+</template>
+
+
+
+   <script>
+
+fetch('https://striveschool-api.herokuapp.com/books') //chiamata
+.then(res=>res.json()) //conversione
+.then(libri=>{
+
+  let target=document.querySelector('#target');//selezione target
+
+    libri.forEach(libro => {//ciclo del clone (per ogni libro in libri)
+        
+    
+    let clone = getCardClone();//clone tramite funzione definita più giù 
+    let img = clone.querySelector('.card-img-top');//identificazione dei campi da riempire
+    let title=clone.querySelector('.card-title'); //identificazione dei campi da riempire
+    let price=clone.querySelector('card-price')//identificazione dei campi da riempire
+
+    img.src=libro.img; //assegnazione tramite metodi stringhe??o dom??
+    title.innerText=libro.title;
+    price.innerText=libro.price;
+    
+    target.append(clone)
+  })
+  
+});
+
+
+function getCardClone(){
+        let temp = document.getElementsByTagName("template")[0];
+        return temp.content.cloneNode(true);
+    }
+
+</script>
+</body>
+</html>

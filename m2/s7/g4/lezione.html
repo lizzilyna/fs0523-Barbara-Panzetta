@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="target"></div>
+
+    <script>
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users=>{
+
+        todos=todos.map (t=>{ //map per fare sì che metta il nome
+            let user = users.find(u=>u.id==t.userid);
+            t.userName=user.Name
+        })
+
+
+
+        console.log(todos);
+        
+        todos.forEach(t=>{
+        let div =document.createElement('div');
+        div.innerText=`Titolo task: ${t.title},
+        Completo: $(t.completed),
+        Chi lo deve svolgere: $(user.name)`
+
+document.querySelector('#target').append(div)
+        
+    })
+    })
+
+</script>
+    </body>
+</html>

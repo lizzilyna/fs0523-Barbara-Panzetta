@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Libreria</title>
+</head>
+<body>
+        <header>
+          <h1>Libreria</h1>
+        </header>
+        <main>
+          <section class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <h2>Libri</h2>
+              </div>
+              <div class="col-md-9">
+                </div>
+            </div>
+         
+      
+      <script>
+
+function createData(){
+            let newBook = {
+  "titolo": "Il Signore degli Anelli",
+  "autore": "J.R.R. Tolkien",
+  "genere": "Fantasy",
+  "editore": "HarperCollins",
+  "data di pubblicazione": "1954-07-29"
+};
+}
+
+fetch("https://striveschool-api.herokuapp.com/books",{
+                method:'GET',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify(newBook)
+            })
+            .then(res => res.json())
+            .then(res => console.log(`Articolo ${res.libro} creato`));
+       
+
+      </script>
+
+
+
+</body>
+</html>

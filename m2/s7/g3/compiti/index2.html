@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <h2>books</h2>
+          </div>
+          <div class="col-md-9">
+            </div>
+        </div>
+
+<script>
+
+
+const books = await fetch("https://striveschool-api.herokuapp.com/books");
+const data = await books.json();
+ // Crea un'array di card per i libri
+ const cards = data.map((book) => {
+    return (
+      <div class="card mb-3" key={book.id}>
+        <img src={book.cover} class="card-img-top" alt={book.title} />
+        <div class="card-body">
+          <h5 class="card-title">{book.title}</h5>
+          <p class="card-text">€ {book.price}</p>
+          <button type="button" class="btn btn-danger">Scarta</button>
+        </div>
+      </div>
+    );
+  });
+
+  // Aggiungi le card alla pagina
+  document.querySelector(".col-md-9").innerHTML = cards.join("");
+
+</script>
+
+
+
+</body>
+</html>

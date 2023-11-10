@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    let p =new Promise((successo, insuccesso) => {
+        successo('dato1');
+        insuccesso('dato2');
+    }); //se non scrivo SUCCESSO (o insuccesso) non succederà niente! 
+
+console.log(p);
+
+p.then(res=>console.log(res));
+
+
+let p2 =new Promise((successo, insuccesso) => {
+    let psw='password';
+    if (psw=='password'){
+    successo('ok');
+    }else{
+        insuccesso('no');
+    }
+})
+    
+
+    </script>
+</body>
+</html>
+
+io ho inventato l'htmlù. oh ma a proposito di invenzioni vi devo assolutamente dire l'idea di mia figlia. Il social in codice
