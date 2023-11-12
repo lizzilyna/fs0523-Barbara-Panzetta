@@ -1,29 +1,6 @@
 const token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRkZmQxNTk1ZDRmNjAwMTg1NjI1NWYiLCJpYXQiOjE2OTk2MDk4NzcsImV4cCI6MTcwMDgxOTQ3N30.HNrc5QUKlHy2b4PvLttJFodb3Atbl9CqmBudy7Qo6L4";
 const apiUrl = "https://striveschool-api.herokuapp.com/api";
 
-// Funzione per inviare una richiesta POST per creare un prodotto
-
-
-// Funzione per la modifica del prodotto
-async function editProduct(productId) {
-  // Esegui una richiesta API PUT per modificare il prodotto con l'ID specifico
-  // Aggiorna i dati del prodotto con quelli modificati
-  // Ricarica i prodotti dalla API o aggiorna la carta del prodotto con i dati modificati
-}
-
-// Funzione per la cancellazione del prodotto
-async function deleteProduct(productId) {
-  // Esegui una richiesta API DELETE per cancellare il prodotto con l'ID specifico
-  // Rimuovi la carta del prodotto dalla visualizzazione
-}
-
-
-
-
-
-
-
-
 
 
 function createProduct() {
@@ -191,9 +168,9 @@ async function del(productId) {
 
 
 //PULSANTE MODIFICA
-// Funzione per gestire il click sul pulsante "Modifica"
+
 async function editProduct(productId) {
-  // Recupera i dati del prodotto tramite la funzione "get"
+
   const productData = await get(productId);
 
   if (productData) {
@@ -216,8 +193,6 @@ async function editProduct(productId) {
     
     await put(productId, updatedData);
     
-    // Successivamente, puoi gestire l'invio del modulo di modifica
-    // e utilizzare la funzione "put" per aggiornare il prodotto.
   }
 }
 
@@ -227,16 +202,14 @@ async function editProduct(productId) {
 async function deleteProduct(productId) {
   const confirmation = confirm("Sei sicuro di voler eliminare questo prodotto?");
   if (confirmation) {
-    // Verifica se l'utente conferma la cancellazione
+    
 
     const result = await del(productId);
 
     if (result) {
-      // Se l'eliminazione ha avuto successo, puoi eseguire azioni come aggiornare la visualizzazione dei prodotti
-      // o fornire una notifica di successo
       console.log("Prodotto eliminato con successo.");
     } else {
-      // Altrimenti, gestisci eventuali errori o fornisce un messaggio di errore all'utente
+    
       console.error("Errore durante l'eliminazione del prodotto.");
     }
   }
