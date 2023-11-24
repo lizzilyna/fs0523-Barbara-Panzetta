@@ -1,4 +1,4 @@
-interface SmartphoneInterface {
+interface SIM {
     carica: number;
     numeroChiamate: number;
     costoMinuto: number;
@@ -17,7 +17,7 @@ interface SmartphoneInterface {
 }
 
 
-class Smartphone implements SmartphoneInterface {
+class Smartphone implements SIM {
     carica: number;
     numeroChiamate: number;
     costoMinuto: number;
@@ -78,8 +78,7 @@ chiamata(min: number): void {
          this.registroChiamate.forEach ((chiamata)=>{console.log(`ID:${chiamata.id}, durata: ${chiamata.durata.toFixed(1)} min, data e ora: ${chiamata.dataOra}`);
          })
     }
-
-         
+       
 }
 
 const telefonino=new Smartphone();
@@ -91,12 +90,3 @@ telefonino.chiamata(2);
 console.log(telefonino.getNumeroChiamate());
 console.log(telefonino.numero404());
 telefonino.mostraRegistroChiamate()
-
-
-
-
-
-
-
-
-
