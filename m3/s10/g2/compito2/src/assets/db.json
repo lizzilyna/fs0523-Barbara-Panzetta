@@ -1,0 +1,7 @@
+[
+    { "id": 1, "title": "Dio", "active": true },
+    { "id": 2, "title": "La Madonna", "active": false },
+    { "id": 1, "title": "I Santi", "active": true },
+    { "id": 2, "title": "Gli Angeli", "active": false },
+    { "id": 2, "title": "Gesù", "active": false }
+  ]
