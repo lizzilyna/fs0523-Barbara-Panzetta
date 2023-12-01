@@ -4,9 +4,11 @@ import { TodoComponent } from './todo/todo.component';
 import { CompletedComponent } from './completed/completed.component';
 
 const routes: Routes = [
-  { path: '', component: TodoComponent },
+  { path: 'todo', component: TodoComponent },
   { path: 'completed', component: CompletedComponent },
+  { path: '', redirectTo: '/todo', pathMatch: 'full' }, // reindirizzamento predefinito
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

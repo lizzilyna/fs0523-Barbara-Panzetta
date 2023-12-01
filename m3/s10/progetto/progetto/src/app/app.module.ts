@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { CompletedComponent } from './completed/completed.component';
 import { TodosService } from './todos.service';
+import { ListaComponent } from './lista/lista.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoComponent, CompletedComponent],
+  declarations: [AppComponent, TodoComponent, CompletedComponent, ListaComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [TodosService],
   bootstrap: [AppComponent],

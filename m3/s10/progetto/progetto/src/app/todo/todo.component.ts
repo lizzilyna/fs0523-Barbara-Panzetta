@@ -1,37 +1,46 @@
 // todo-page.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TodosService } from '../todos.service';
-import { Todo } from '../Models/itodo';
+import { Todo } from '../Models/todo';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss'],
 })
-export class TodoComponent implements OnInit {
+export class TodoComponent  {
   todos: any[] = [];
-  completedTodos: any[] = [];
+  
   newTodoTitle: string = '';
 
-  constructor(private todosService: TodosService) {}
+  newTodo:Partial<Todo> ={
+      completed: false
+    };
+  
+    oldTodo:Todo|null = null;
 
-  ngOnInit(): void {
-    this.loadTodos();
-  }
+    loading: boolean= false;
 
-  async loadTodos(): Promise<void> {
-    this.todos = await this.todosService.getTodos();
-    this.completedTodos = await this.todosService.getCompletedTodos();
-  }
+constructor(
+    private todosService: TodosService,
+    private router:Router
+    ) {}
 
-  async addTodo(): Promise<void> {
-    if (this.newTodoTitle.trim() !== '') {
-      const newTodo: any = { id: this.todos.length + 1, title: this.newTodoTitle, completed: false };
-      await this.todosService.addTodo(newTodo);
-      await this.loadTodos();
-      this.newTodoTitle = '';
+  
+
+    saveTodo(): void {
+      this.loading = true;
+      this.todosService.create(this.newTodo).then(res => {
+        this.loading = false;
+        this.oldTodo = res;
+        this.newTodo = { completed: false }; 
+        console.log('Task aggiunto con successo:', res);
+    
+        
+        this.todos.push(res);
+      });
     }
+ 
   }
-}
-
-

@@ -11,46 +11,52 @@ export class TodosService {
   apiUrl:string = 'http://localhost:3000/todos';
 
 
-  private todos: any[] = [
-    { id: 1, title: 'Fare la spesa', completed: false },
-    { id: 2, title: 'Studiare Angular', completed: true },
-    // Altri todo...
-  ];
-
-  async getTodos(): Promise<any[]> {
-    // Simula una pausa di 2 secondi
-    await this.delay(2000);
-    return this.todos;
+  getAll():Promise<Todo[]>{
+    return fetch(this.apiUrl).then(res => res.json())
   }
 
-  async getCompletedTodos(): Promise<any[]> {
-    // Simula una pausa di 2 secondi
-    await this.delay(2000);
-    return this.todos.filter((todo) => todo.completed);
+  getById(id:number):Promise<Todo>{
+    return fetch(this.apiUrl+`/${id}`).then(res => res.json())
   }
 
-  async addTodo(newTodo: any): Promise<void> {
-    // Simula una pausa di 2 secondi
-    await this.delay(2000);
-    this.todos.push(newTodo);
+  getCompletedTodos(): Promise<Todo[]> {
+   return fetch(this.apiUrl + '/completed').then(res => res.json());
   }
 
-  async removeTodo(todoId: number): Promise<void> {
-    // Simula una pausa di 2 secondi
-    await this.delay(2000);
-    this.todos = this.todos.filter((todo) => todo.id !== todoId);
+  create(todo:Partial<Todo>):Promise<Todo>{
+    todo = this.toBoolean(todo);
+    return fetch(this.apiUrl,{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify(todo)
+    }).then(res => res.json())
   }
 
-  async updateTodo(todoId: number, updatedTodo: any): Promise<void> {
-    // Simula una pausa di 2 secondi
-    await this.delay(2000);
-    const index = this.todos.findIndex((todo) => todo.id === todoId);
-    if (index !== -1) {
-      this.todos[index] = { ...this.todos[index], ...updatedTodo };
-    }
+  update(todo:Todo):Promise<Todo>{
+    todo = this.toBoolean(todo);
+    return fetch(this.apiUrl+`/${todo.id}`,{
+      method:'PUT',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify(todo)
+    }).then(res => res.json())
   }
 
-  private delay(ms: number): Promise<void> {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+  delete(id:number):Promise<Todo>{
+    return fetch(this.apiUrl+`/${id}`,{
+      method:'DELETE',
+      headers:{
+        'Content-Type':'application/json'
+      }
+    }).then(res => res.json())
   }
+
+  toBoolean<T>(todo:Partial<Todo>){
+    todo.completed = Boolean(Number(todo.completed));
+    return todo as T
+  }
+
 }
