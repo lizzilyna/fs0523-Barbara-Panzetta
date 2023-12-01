@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { TodosService } from '../todos.service';
 import { Todo } from '../Models/todo';
 import { Router } from '@angular/router';
+import { iTodo } from '../Models/itodo'; 
 
 
 @Component({
@@ -11,17 +12,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent  {
-  todos: Todo[] = [];
+  todos: iTodo[] = [];
   
   newTodoTitle: string = '';
 
-  newTodo:Partial<Todo> ={
-      completed: false
-    };
+  newTodo: iTodo = new Todo('', false, false);
   
-    oldTodo:Todo|null = null;
+    oldTodo:iTodo|null = null;
 
     loading: boolean= false;
+
+    completedTemp: boolean = false;
 
 constructor(
     private todosService: TodosService,
@@ -44,10 +45,11 @@ constructor(
 
     saveTodo(): void {
       this.loading = true;
+      this.newTodo.completed = this.completedTemp;
       this.todosService.create(this.newTodo).then(res => {
         this.loading = false;
         this.oldTodo = res;
-        this.newTodo = { completed: false }; 
+        this.newTodo = { title: "Nuovo task", completed: false }; 
         console.log('Task aggiunto con successo:', res);
     
         

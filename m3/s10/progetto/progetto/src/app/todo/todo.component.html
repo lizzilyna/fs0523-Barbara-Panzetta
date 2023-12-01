@@ -6,11 +6,11 @@
         Titolo:
         <input type="text" required placeholder="Titolo" [(ngModel)]="newTodo.title" name="title">
       </label>
-      <label>
+      <!--<label>
         Completato:
         <input type="checkbox" [(ngModel)]="newTodo.completed" name="completed">
-      </label>
-      <button (click)="saveTodo()">Salva</button>
+      </label>-->
+      <button>Salva</button>
     </form>
   
     <div *ngIf="loading">
@@ -24,7 +24,7 @@
     <h2>Todos</h2>
     <ul>
       <li *ngFor="let todo of todos">
-        <input type="checkbox" [(ngModel)]="todo.completed"> {{ todo.title }} - {{ todo.completed ? 'Completato' : 'Da fare' }}
+        <input type="checkbox" [(ngModel)]="todo.completedTemp"> {{ todo.title }} - {{ todo.completedTemp ? 'Completato' : 'Da fare' }}
       </li>
     </ul>
 
@@ -32,7 +32,7 @@
       Caricamento in corso
     </div>
     
-    <table *ngIf="todos.length">
+    <!--<table *ngIf="todos.length">
       <tr>
         <th>#</th>
         <th>Titolo</th>
@@ -42,13 +42,13 @@
       <tr *ngFor="let t of todos">
         <td>{{t.id}}</td>
         <td>{{t.title}}</td>
-      <td>{{t.completed}}</td>
+      <td>{{t.completedTemp}}</td>
         <td>
           <a [routerLink]="['/todo','/completed',t.id]" >Modifica</a>
-          <button (click)="delete(t.id)" >Elimina</button>
+          <button (click)="delete(t.id||0)" >Elimina</button>
         </td>
       </tr>
-    </table>
+    </table>-->
   
     <a routerLink="/completed">Vai ai completati</a>
   </div>
