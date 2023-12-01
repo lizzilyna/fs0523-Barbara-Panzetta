@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent  {
-  todos: any[] = [];
+  todos: Todo[] = [];
   
   newTodoTitle: string = '';
 
@@ -28,7 +28,19 @@ constructor(
     private router:Router
     ) {}
 
+    delete(todoId: number): void {
+      this.todosService.delete(todoId).then(() => {
+        // Dopo l'eliminazione, ricarica i todo
+        this.loadTodos();
+      });
+    }
   
+    private loadTodos(): void {
+      // Chiamata al servizio per ottenere i todo
+      this.todosService.getAll().then((todos) => {
+        this.todos = todos;
+      });
+    }
 
     saveTodo(): void {
       this.loading = true;

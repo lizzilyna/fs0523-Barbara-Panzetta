@@ -7,11 +7,13 @@ import { TodoComponent } from './todo/todo.component';
 import { CompletedComponent } from './completed/completed.component';
 import { TodosService } from './todos.service';
 import { ListaComponent } from './lista/lista.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [AppComponent, TodoComponent, CompletedComponent, ListaComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [TodosService],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,22 +1,2 @@
-<div *ngIf="!todos.length">
-    Caricamento in corso
-  </div>
-  
-  <table *ngIf="todos.length">
-    <tr>
-      <th>#</th>
-      <th>Titolo</th>
-      <th>Completato</th>
-      
-    </tr>
-    <tr *ngFor="let t of todo">
-      <td>{{t.id}}</td>
-      <td>{{t.title}}</td>
-    <td>{{t.completed}}</td>
-      <td>
-        <a [routerLink]="['/todo','/completed',t.id]" class="btn btn-warning">Modifica</a>
-        <button (click)="delete(t.id)" class="btn btn-danger">Elimina</button>
-      </td>
-    </tr>
-  </table>
+
   

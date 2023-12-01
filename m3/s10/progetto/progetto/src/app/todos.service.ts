@@ -1,18 +1,27 @@
 // todos.service.ts
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Todo } from './Models/todo';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodosService {
+  private apiUrl = 'http://localhost:3000/todos';
 
-  constructor(){}
-  apiUrl:string = 'http://localhost:3000/todos';
+  constructor(private http: HttpClient) {}
 
-
-  getAll():Promise<Todo[]>{
-    return fetch(this.apiUrl).then(res => res.json())
+  getAll(): Promise<Todo[]> {
+    return fetch(this.apiUrl)
+      .then(res => res.json())
+      .then(data => {
+        console.log('Data from server:', data); // Aggiungi questo console.log
+        return data;
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        throw error;
+      });
   }
 
   getById(id:number):Promise<Todo>{
