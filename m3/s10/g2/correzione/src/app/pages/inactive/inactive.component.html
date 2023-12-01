@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Gusto</th>
+      <th>Prezzo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pizza of pizze">
+        <td>{{pizza.id}}</td>
+        <td>{{pizza.gusto}}</td>
+        <td>{{pizza.prezzo}}</td>
+    </tr>
+  </tbody>
+</table>
