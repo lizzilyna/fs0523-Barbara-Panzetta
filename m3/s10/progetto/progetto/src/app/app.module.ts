@@ -8,12 +8,15 @@ import { CompletedComponent } from './completed/completed.component';
 import { TodosService } from './todos.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { FilterPipe } from './filter.pipe';
+
 
 
 @NgModule({
-  declarations: [AppComponent, TodoComponent, CompletedComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [TodosService],
+  declarations: [AppComponent, TodoComponent, CompletedComponent, FilterPipe],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, CommonModule],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

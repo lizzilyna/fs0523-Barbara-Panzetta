@@ -2,7 +2,7 @@
 <div>
     <h2>Todo Completati</h2>
     <ul>
-      <li *ngFor="let todo of completedTodos">
+      <li *ngFor="let todo of todos | filter: { completed: true }">
         {{ todo.title }}
       </li>
     </ul>

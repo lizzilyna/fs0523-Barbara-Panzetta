@@ -1,6 +1,7 @@
 // todos.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Todo } from './Models/todo';
 
 @Injectable({
@@ -16,7 +17,7 @@ export class TodosService {
       .then(res => res.json())
       .then(data => {
         console.log('Data from server:', data); // Aggiungi questo console.log
-        return data;
+        return data as Todo[];
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -29,7 +30,22 @@ export class TodosService {
   }
 
   getCompletedTodos(): Promise<Todo[]> {
-   return fetch(this.apiUrl + '/completed').then(res => res.json());
+    return fetch(`${this.apiUrl}/completed`)
+      .then(res => res.json())
+      .then(data => {
+        console.log('Response from server:', data); // Aggiungi questo console.log
+        if (Array.isArray(data)) {
+          return data as Todo[];
+        } else {
+          // Nel caso in cui la risposta non sia un array, gestisci di conseguenza
+          console.error('Invalid response format for completed todos:', data);
+          throw new Error('Invalid response format');
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching completed todos:', error);
+        throw error;
+      });
   }
 
   create(todo:Partial<Todo>):Promise<Todo>{

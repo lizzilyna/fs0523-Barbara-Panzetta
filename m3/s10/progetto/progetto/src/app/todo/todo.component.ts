@@ -51,9 +51,12 @@ constructor(
         this.oldTodo = res;
         this.newTodo = { title: "Nuovo task", completed: false }; 
         console.log('Task aggiunto con successo:', res);
-    
-        
+               
         this.todos.push(res);
+        if (res.completed) {
+          // Se il nuovo todo è completato, spostalo nella lista dei completati
+          this.todos = this.todos.filter(todo => !todo.completed);
+        }
       });
     }
  
