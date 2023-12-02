@@ -16,7 +16,7 @@ import { FilterPipe } from './filter.pipe';
 @NgModule({
   declarations: [AppComponent, TodoComponent, CompletedComponent, FilterPipe],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, CommonModule],
-  providers: [],
+  providers: [TodosService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -30,7 +30,7 @@ export class TodosService {
   }
 
   getCompletedTodos(): Promise<Todo[]> {
-    return fetch(`${this.apiUrl}/completed`)
+    return fetch(`${this.apiUrl}`)
       .then(res => res.json())
       .then(data => {
         console.log('Response from server:', data); // Aggiungi questo console.log
