@@ -8,7 +8,7 @@ import { Todo } from './Models/todo';
   providedIn: 'root',
 })
 export class TodosService {
-  private apiUrl = 'http://localhost:3000/todos';
+  private apiUrl = '../assets/db.json';
 
   constructor(private http: HttpClient) {}
 

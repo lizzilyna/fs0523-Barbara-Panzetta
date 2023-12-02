@@ -1,8 +1,6 @@
-// completed.component.ts
 import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../todos.service';
 import { iTodo } from '../Models/itodo';
-
 
 @Component({
   selector: 'app-completed',
@@ -19,15 +17,13 @@ export class CompletedComponent implements OnInit {
   }
 
   loadCompletedTodos(): void {
-    this.todosService.getCompletedTodos().then((completedData) => {
-      this.todos = Array.isArray(completedData) ? completedData : [];
-    },
-    (error) => {
-      console.error('Errore nel caricamento dei todos completati:', error);
-    });
+    this.todosService.getCompletedTodos().then(
+      (completedData) => {
+        this.todos = Array.isArray(completedData) ? completedData : [];
+      },
+      (error) => {
+        console.error('Errore nel caricamento dei todos completati:', error);
+      }
+    );
   }
-  getCompletedTodos(): any[] {
-    return this.todos.filter((todo) => todo.completed === true);
-  }
-
 }
