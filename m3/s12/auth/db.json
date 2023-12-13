@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "email": "barbara.panzetta@gmail.com",
+      "password": "$2a$10$zeBHYLYcZ3D8oFkUiofhOuZhU7ajhlw4/QPiWsdbediwieLmL9ytK",
+      "id": 1
+    },
+    {
+      "email": "antonio@antonio.com",
+      "password": "$2a$10$u4y5QHZL1HKOKmNAQc/1Ue0p9Q0Du4cd4cRneZPMaLskR8CahRqRC",
+      "nome": "Antonio",
+      "id": 2
+    },
+    {
+      "email": "antonio@antonio.net",
+      "password": "$2a$10$feePQLi6yOknszZYT.1HBe9z.sd0LGMQHMgqN.xKiq6xksAHieyXG",
+      "nome": "Barbara",
+      "id": 3
+    },
+    {
+      "email": "juvu@temple.org",
+      "password": "$2a$10$DcS3Qc1md0J4/ht4xOWpsuGN7mL/DGYA8pwlR95CvPtqwugzfirrq",
+      "nome": "uvu",
+      "id": 4
+    },
+    {
+      "email": "nnnnn@sxs.it",
+      "password": "$2a$10$tY7PviZ/0cDNaz9LD3mnwu5hrpYS9fldtsf5V9xJgtM0pPkoK2R8K",
+      "nome": "Edoardo",
+      "id": 5
+    },
+    {
+      "email": "mario.rossi@mario.it",
+      "password": "$2a$10$FXcvj8RUD7/I45FpvV.RfO.vwryrEp9mMD8URLR63U0.nwnkkW6vC",
+      "nome": "Mario Rossi",
+      "id": 6
+    },
+    {
+      "email": "temple@temple.it",
+      "password": "$2a$10$VaAZi5CHC1cLDtln7Ss46Ok/uSA0/M631VA5LkCoGPDUlGX0DhB2y",
+      "nome": "Henrietta Temple",
+      "id": 7
+    },
+    {
+      "email": "termosifone@wilson.it",
+      "password": "$2a$10$YwQcC1axAsZyW8rilSZp/uBqUoTiPnp75DCMIX3Ncp4UB0O1qlpLi",
+      "nome": "termosifone wilson",
+      "id": 8
+    }
+  ]
+}

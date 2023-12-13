@@ -1,0 +1,15 @@
+<div class="container mt-3">
+  <h3 class="mb-4 text-primary">meteo.</h3>
+
+  <div class="card bg-light text-dark">
+    <div class="card-body">
+      <h4 class="card-title">{{ weatherData?.city.name }}, {{ weatherData.city.country }}</h4>
+      <p class="card-text">Temperatura: {{ weatherData?.list[0].main.temp }}°C</p>
+      <p class="card-text">Condizioni: {{ weatherData?.list[0].weather[0].description }}</p>
+    </div>
+  </div>
+
+  <div class="alert alert-danger mt-3" *ngIf="error">
+    {{ error }}
+  </div>
+</div>

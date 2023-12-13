@@ -1,0 +1,18 @@
+<div class="container mt-5" style="background-image: url('/assets/sfondo.jpg'); background-size: cover; padding: 20px;">
+  <div class="row">
+      <div class="col-md-6">
+          <img src="assets/weather-news.png" alt="Logo Meteo" class="img-fluid mb-4" style="max-width: 50%;">
+          <h2 class="text-primary mb-4">meteo.</h2>
+      </div>
+      <div class="col-md-6">
+          <h5>Login</h5>
+          <form>
+              <input type="email" [(ngModel)]="loginData.email" name="email" class="form-control" placeholder="Email">
+              <input type="password" [(ngModel)]="loginData.password" name="password" class="form-control" placeholder="Password">
+              <button (click)="save()" class="btn btn-primary">Login</button>
+          </form>
+      </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,17 @@
+<div class="container mt-5" style="background-image: url('/assets/sfondo.jpg'); background-size: cover; padding: 20px;">
+  <div class="row">
+      <div class="col-md-6">
+          <img src="assets/weather-news.png" alt="Logo Meteo" class="img-fluid mb-4" style="max-width: 50%;">
+          
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-primary mb-4 mt-5">ricerca città.</h4>
+          <div class="input-group mt-3">
+              <input type="text" [(ngModel)]="cityName" class="form-control" placeholder="Inserisci il nome della città">
+              <button (click)="onSearch()" class="btn btn-outline-secondary">Cerca</button>
+          </div>
+      </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
