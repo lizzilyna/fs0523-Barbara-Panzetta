@@ -10,3 +10,4 @@ export class WeatherDisplayComponent {
   @Input() weatherData: any;
   @Input() error: any;
 }
+

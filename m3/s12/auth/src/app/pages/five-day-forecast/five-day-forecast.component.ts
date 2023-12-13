@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WeatherService } from '../../weather.service';
-import { WeatherData } from '../auth/models/i-weather-data'; // Assicurati che il percorso sia corretto
+import { WeatherData } from '../auth/models/i-weather-data'; 
 
 @Component({
   selector: 'app-five-day-forecast',
@@ -11,7 +11,7 @@ import { WeatherData } from '../auth/models/i-weather-data'; // Assicurati che i
 export class FiveDayForecastComponent implements OnInit {
   cityWeather: WeatherData = {
     city: { name: '', country: '' },
-    list: [], // Assicurati che la struttura di list sia corretta
+    list: [], 
   };
 
   constructor(
