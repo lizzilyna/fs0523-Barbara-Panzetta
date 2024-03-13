@@ -8,19 +8,31 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatSliderModule } from '@angular/material/slider';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { RegisterComponent } from './register/register.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatSliderModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    HomeComponent,
+    RegisterComponent,
+    MatToolbarModule,
+    MatIconModule,
   ],
   providers: [
     provideAnimationsAsync()

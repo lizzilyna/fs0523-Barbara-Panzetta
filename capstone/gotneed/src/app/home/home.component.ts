@@ -1,22 +1,22 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 
+/** @title Form field with hints */
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: 'home.component.html',
+  styleUrl: 'home.component.css',
+  standalone: true,
+  imports: [MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule, MatToolbarModule, MatButtonModule],
 })
 export class HomeComponent implements OnInit {
-  
-  isDisabled =false;
+  showNavbarColor: boolean = true; // Determina se la navbar deve avere un colore diverso
 
-  constructor(){
-  console.log("costruttore")
+  constructor() { }
 
-    }
-      ngOnInit(): void {
-    console.log("ngOnInit")
-    setInterval(() => {this.isDisabled=!this.isDisabled
-  },1000)
-
-}
-}
+  ngOnInit(): void {}}
