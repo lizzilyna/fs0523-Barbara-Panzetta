@@ -5,37 +5,18 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit, AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, DoCheck, OnDestroy {
+export class HomeComponent implements OnInit {
   
-  nomecane='paolillo'
+  isDisabled =false;
 
   constructor(){
-  console.log("costruttore");
+  console.log("costruttore")
 
-
-
-  }
-  ngAfterContentChecked(): void {
-    console.log("ngAfterContentChecked");
-  }
-  ngAfterContentInit(): void {
-    console.log("ngAfterContentInit")
-  }
-  ngAfterViewChecked(): void {
-    console.log("ngAfterViewChecked")
-  }
-  ngAfterViewInit(): void {
-    console.log("ngAfterViewInit")
-  }
-  ngDoCheck(): void {
-    console.log("ngDoCheck")
-  }
-  ngOnDestroy(): void {
-    console.log("ngOnDestroy")
-  }
-  ngOnInit(): void {
+    }
+      ngOnInit(): void {
     console.log("ngOnInit")
-    
-  }
+    setInterval(() => {this.isDisabled=!this.isDisabled
+  },1000)
 
+}
 }
