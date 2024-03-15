@@ -21,18 +21,18 @@ export class GirlFormComponent {
 
   constructor() {
  
-  this.nome = ''; // Inizializza il campo nome
-  this.cognome = ''; // Inizializza il campo cognome
-  this.username = ''; // Inizializza il campo username
-  this.email = ''; // Inizializza il campo email
-  this.provincia = ''; // Inizializza il campo provincia
-  this.dataNascita = ''; // Inizializza il campo dataNascita
+  this.nome = ''; 
+  this.cognome = ''; 
+  this.username = ''; 
+  this.email = ''; 
+  this.provincia = ''; 
+  this.dataNascita = ''; 
 
     // Inizializza gli help offerti con opzioni predefinite
     this.helpOfferti = ['Aiuto compiti', 'Aiuto domestico', 'Assistenza anziani', 'Baby sitting', 'Giardinaggio', 'Pet-sitting', 'Riparazioni', 'Servizio Auto'];
 
     // Inizializza gli help richiesti con opzioni predefinite
-    this.helpRichiesti = ['Aiuto domestico', 'Assistenza anziani', 'Riparazioni'];
+    this.helpRichiesti = ['Aiuto compiti', 'Aiuto domestico', 'Assistenza anziani', 'Baby sitting', 'Giardinaggio', 'Pet-sitting', 'Riparazioni', 'Servizio Auto'];
   }
 
   onSubmit() {

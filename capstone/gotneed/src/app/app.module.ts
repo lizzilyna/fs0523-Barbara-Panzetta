@@ -22,7 +22,10 @@ import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
-    GirlFormComponent
+    GirlFormComponent,
+    HomeComponent,
+    RegisterComponent
+    
   ],
   imports: [
     BrowserModule,

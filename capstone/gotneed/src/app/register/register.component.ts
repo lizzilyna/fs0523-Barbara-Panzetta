@@ -7,8 +7,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
-  standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatSelectModule],
+  //standalone: false,
+  //imports: [MatFormFieldModule, MatInputModule, MatSelectModule],
 })
 export class RegisterComponent {
 
