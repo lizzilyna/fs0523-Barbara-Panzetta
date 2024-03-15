@@ -1,0 +1,10 @@
+<form #girlForm="ngForm" (ngSubmit)="onSubmit()">
+  <!-- Campi del modulo con bindings [(ngModel)] -->
+  <label for="nome">Nome</label>
+  <input type="text" id="nome" name="nome" [(ngModel)]="nome" required>
+  
+  <!-- Altri campi del modulo -->
+
+  <!-- Pulsante di invio -->
+  <button type="submit" [disabled]="!girlForm.valid">Invia</button>
+</form>
