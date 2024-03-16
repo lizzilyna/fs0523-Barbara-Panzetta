@@ -18,6 +18,8 @@ import { GirlFormComponent } from './girl-form/girl-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
+import { DataService } from './services/data.service';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,7 @@ import { MatSelectModule } from '@angular/material/select';
     
   ],
   providers: [
-    
+    DataService
   ],
   bootstrap: [AppComponent]
 })
