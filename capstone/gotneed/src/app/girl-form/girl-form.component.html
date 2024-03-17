@@ -1,24 +1,51 @@
-<form #girlForm="ngForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="girlForm" (ngSubmit)="onSubmit()">
   <!-- Campi del modulo con bindings [(ngModel)] -->
-  <label for="nome">Nome</label>
-  <input type="text" id="nome" name="nome" [(ngModel)]="nome" required>
-  
-  <mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="nome" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Cognome</mat-label>
+    <input matInput formControlName="cognome" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Provincia</mat-label>
+    <input matInput formControlName="provincia" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Data di nascita</mat-label>
+    <input matInput type="date" formControlName="dataNascita" required>
+  </mat-form-field>
+
+  <!-- Menu a tendina per gli help offerti -->
+  <mat-form-field appearance="fill">
     <mat-label>Help Offerti</mat-label>
-    <mat-select name="helpOfferti" [(ngModel)]="selectedHelpOfferti" multiple>
-      <mat-option *ngFor="let help of helpOfferti" [value]="help">{{ help }}</mat-option>
+    <mat-select formControlName="helpOfferti" multiple>
+      <mat-option *ngFor="let help of helpOffertiOptions" [value]="help">{{ help }}</mat-option>
     </mat-select>
   </mat-form-field>
 
   <!-- Menu a tendina per gli help richiesti -->
-  <mat-form-field>
+  <mat-form-field appearance="fill">
     <mat-label>Help Richiesti</mat-label>
-    <mat-select name="helpRichiesti" [(ngModel)]="selectedHelpRichiesti" multiple>
-      <mat-option *ngFor="let help of helpRichiesti" [value]="help">{{ help }}</mat-option>
+    <mat-select formControlName="helpRichiesti" multiple>
+      <mat-option *ngFor="let help of helpRichiestiOptions" [value]="help">{{ help }}</mat-option>
     </mat-select>
   </mat-form-field>
 
   <!-- Pulsante di invio -->
-  <button type="submit" [disabled]="!girlForm.valid">Invia</button>
+  <button type="submit" [disabled]="!girlForm.valid" mat-raised-button color="accent">Invia</button>
 </form>
-

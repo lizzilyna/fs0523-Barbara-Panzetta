@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataService } from '../services/data.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-girl-form',
@@ -6,6 +8,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./girl-form.component.css']
 })
 export class GirlFormComponent {
+  girlForm: FormGroup;
+
+  provinceOptions: string[] = [
+    'Agrigento', 'Alessandria', 'Ancona', 'Aosta', 'Arezzo', 'Ascoli Piceno', 'Asti', 'Avellino', 'Bari', 'Barletta-Andria-Trani', 
+    'Belluno', 'Benevento', 'Bergamo', 'Biella', 'Bologna', 'Bolzano', 'Brescia', 'Brindisi', 'Cagliari', 'Caltanissetta', 
+    'Campobasso', 'Carbonia-Iglesias', 'Caserta', 'Catania', 'Catanzaro', 'Chieti', 'Como', 'Cosenza', 'Cremona', 'Crotone', 
+    'Cuneo', 'Enna', 'Fermo', 'Ferrara', 'Firenze', 'Foggia', 'Forlì-Cesena', 'Frosinone', 'Genova', 'Gorizia', 'Grosseto', 
+    'Imperia', 'Isernia', 'La Spezia', `L'Aquila`, 'Latina', 'Lecce', 'Lecco', 'Livorno', 'Lodi', 'Lucca', 'Macerata', 'Mantova', 
+    'Massa-Carrara', 'Matera', 'Medio Campidano', 'Messina', 'Milano', 'Modena', 'Monza e della Brianza', 'Napoli', 'Novara', 
+    'Nuoro', 'Ogliastra', 'Olbia-Tempio', 'Oristano', 'Padova', 'Palermo', 'Parma', 'Pavia', 'Perugia', 'Pesaro e Urbino', 'Pescara', 
+    'Piacenza', 'Pisa', 'Pistoia', 'Pordenone', 'Potenza', 'Prato', 'Ragusa', 'Ravenna', 'Reggio Calabria', 'Reggio Emilia', 'Rieti', 
+    'Rimini', 'Roma', 'Rovigo', 'Salerno', 'Sassari', 'Savona', 'Siena', 'Siracusa', 'Sondrio', 'Taranto', 'Teramo', 'Terni', 'Torino', 
+    'Trapani', 'Trento', 'Treviso', 'Trieste', 'Udine', 'Varese', 'Venezia', 'Verbano-Cusio-Ossola', 'Vercelli', 'Verona', 'Vibo Valentia', 
+    'Vicenza', 'Viterbo'
+  ];
+
+  helpOffertiOptions: string[] = ['Aiuto compiti', 'Aiuto domestico', 'Assistenza anziani', 'Baby sitting', 'Giardinaggio', 'Pet-sitting', 'Riparazioni', 'Servizio Auto'];
+  helpRichiestiOptions: string[] = ['Aiuto compiti', 'Aiuto domestico', 'Assistenza anziani', 'Baby sitting', 'Giardinaggio', 'Pet-sitting', 'Riparazioni', 'Servizio Auto'];
+  
   nome: string = '';
   cognome: string = '';
   username: string = '';
@@ -13,32 +34,48 @@ export class GirlFormComponent {
   provincia: string = '';
   dataNascita: string = '';
 
-  helpOfferti: string[]=[]; // Array per gli help offerti
-  helpRichiesti: string[]=[]; // Array per gli help richiesti
-
+ 
   selectedHelpOfferti: string[] = []; 
   selectedHelpRichiesti: string[] = []; 
 
-  constructor() {
+  constructor(
+    private fb: FormBuilder,
+    private dataService: DataService
+    ) {
+
+      this.girlForm = this.fb.group({
  
-  this.nome = ''; 
-  this.cognome = ''; 
-  this.username = ''; 
-  this.email = ''; 
-  this.provincia = ''; 
-  this.dataNascita = ''; 
+  nome: ['', Validators.required], 
+  cognome: ['', Validators.required],
+  username: ['', Validators.required],
+  email: ['', Validators.required], 
+  provincia: ['', Validators.required],
+  dataNascita: ['', Validators.required],
 
-    // Inizializza gli help offerti con opzioni predefinite
-    this.helpOfferti = ['Aiuto compiti', 'Aiuto domestico', 'Assistenza anziani', 'Baby sitting', 'Giardinaggio', 'Pet-sitting', 'Riparazioni', 'Servizio Auto'];
-
-    // Inizializza gli help richiesti con opzioni predefinite
-    this.helpRichiesti = ['Aiuto compiti', 'Aiuto domestico', 'Assistenza anziani', 'Baby sitting', 'Giardinaggio', 'Pet-sitting', 'Riparazioni', 'Servizio Auto'];
+    helpOfferti: [[]], 
+    
+    helpRichiesti: [[]] 
+      });
   }
 
   onSubmit() {
-    // Logica per inviare il form al server
-
-
-    console.log('Dati inviati:', this.nome, this.cognome, this.username, this.email, this.provincia, this.dataNascita, this.helpOfferti, this.helpRichiesti);
+    if (this.girlForm.valid) {
+      const formData = this.girlForm.value;
+    // invio al backend
+    this.dataService.postGirl(formData).subscribe (
+      response=> {
+        console.log('dati inviati al backend: ', response);
+      },
+      error=> {
+        console.error(
+          `errore nell'invio dei dati al backend: `, error)
+        ;
+        
+      }
+      
+    );
+        
+      }
+  
   }
 }
