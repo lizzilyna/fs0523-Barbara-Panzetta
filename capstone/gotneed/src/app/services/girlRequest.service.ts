@@ -11,6 +11,6 @@ export class GirlRequestService {
   constructor(private http: HttpClient) { }
 
   createGirlRequest(girlRequest: GirlRequest): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/register`, girlRequest);
+    return this.http.post<any>(`${this.baseUrl}/auth/register`, girlRequest);
   }
 }

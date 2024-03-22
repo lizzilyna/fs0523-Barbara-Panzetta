@@ -30,6 +30,7 @@ export class GirlFormComponent {
   nome: string = '';
   cognome: string = '';
   username: string = '';
+  password: string = '';
   email: string = '';
   provincia: string = '';
   dataNascita: string = '';
@@ -48,6 +49,7 @@ export class GirlFormComponent {
   nome: ['', Validators.required], 
   cognome: ['', Validators.required],
   username: ['', Validators.required],
+  password: ['', Validators.required],
   email: ['', Validators.required], 
   provincia: ['', Validators.required],
   dataNascita: ['', Validators.required],

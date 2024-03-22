@@ -8,15 +8,15 @@ import { Observable } from "rxjs";
 })
 export class DataService  {
 
-    private baseURL = 'http://localhost:8080/api';
+    private baseURL = 'http://localhost:8080';
     constructor(private http: HttpClient){}
 
     postGirl(data: any): Observable<any> {
-        return this.http.post<any>(`${this.baseURL}/girls`, data);}
+        return this.http.post<any>(`${this.baseURL}/auth/register`, data);}
 
 
     getData() {
-        return this.http.get<any>('http://localhost:8080/api/data')
+        return this.http.get<any>('http://localhost:8080/girls')
 
         imports: [
         ]

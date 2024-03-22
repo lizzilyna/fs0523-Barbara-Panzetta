@@ -19,7 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { DataService } from './services/data.service';
-import { HttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
