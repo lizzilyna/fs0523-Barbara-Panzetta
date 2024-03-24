@@ -5,7 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-girl-form',
   templateUrl: './girl-form.component.html',
-  styleUrls: ['./girl-form.component.css']
+  styleUrls: ['./girl-form.component.scss']
 })
 export class GirlFormComponent {
   girlForm: FormGroup;

@@ -2,7 +2,7 @@
 <p>
   <mat-toolbar class="gotneed" color="accent">
     
-    <div><img src="assets/png/White logo - no background.png" alt="Logo" class="logo"></div>
+    <div><img src="assets/gotneed_transparent-03.png" alt="Logo" class="logo"></div>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
@@ -21,4 +21,16 @@
   </mat-toolbar>
 </p>
 
-
+<!-- home.component.html -->
+<div class="container">
+  <h1></h1>
+  <div class="figurine-container">
+    <div *ngFor="let mestiere of mestieri" class="figurina">
+      <img [src]="mestiere.image" alt="{{ mestiere.nome }}">
+      <div class="figurina-details">
+        <p class="nome">{{ mestiere.nome }}</p>
+        <p class="descrizione">{{ mestiere.descrizione }}</p>
+      </div>
+    </div>
+  </div>
+</div>
