@@ -23,9 +23,7 @@ export class GirlFormComponent {
     'Trapani', 'Trento', 'Treviso', 'Trieste', 'Udine', 'Varese', 'Venezia', 'Verbano-Cusio-Ossola', 'Vercelli', 'Verona', 'Vibo Valentia', 
     'Vicenza', 'Viterbo'
   ];
-
-  helpOffertiOptions: string[] = ['Aiuto compiti', 'Aiuto domestico', 'Assistenza anziani', 'Baby sitting', 'Giardinaggio', 'Pet-sitting', 'Riparazioni', 'Servizio Auto'];
-  helpRichiestiOptions: string[] = ['Aiuto compiti', 'Aiuto domestico', 'Assistenza anziani', 'Baby sitting', 'Giardinaggio', 'Pet-sitting', 'Riparazioni', 'Servizio Auto'];
+  helpTypes: string[] = [];
   
   nome: string = '';
   cognome: string = '';
@@ -54,15 +52,30 @@ export class GirlFormComponent {
   provincia: ['', Validators.required],
   dataNascita: ['', Validators.required],
 
-    helpOfferti: [[]], 
+    helpOfferti: [[], ], 
     
-    helpRichiesti: [[]] 
+    helpRichiesti: [[], ] 
       });
+  }
+
+  
+  convertHelpSelectionToIds(selectedHelp: any[]): number[] {
+    // Logica di conversione, dipende da come selezioni gli help nel form
+    return selectedHelp.map(help => help.id);
+  }
+
+  ngOnInit(): void {
+    this.dataService.getHelpTypes().subscribe(types => {
+      this.helpTypes = types;
+    });
   }
 
   onSubmit() {
     if (this.girlForm.valid) {
+      console.log(this.girlForm.value);
       const formData = this.girlForm.value;
+      formData.helpOfferti = this.convertHelpSelectionToIds(this.selectedHelpOfferti);
+      formData.helpRichiesti = this.convertHelpSelectionToIds(this.selectedHelpRichiesti);
     // invio al backend
     this.dataService.postGirl(formData).subscribe (
       response=> {
@@ -81,3 +94,4 @@ export class GirlFormComponent {
   
   }
 }
+

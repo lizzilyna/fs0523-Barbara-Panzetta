@@ -15,10 +15,16 @@ export class DataService  {
         return this.http.post<any>(`${this.baseURL}/auth/register`, data);}
 
 
-    getData() {
-        return this.http.get<any>('http://localhost:8080/girls')
+    getData(): Observable<any> {
+        return this.http.get<any>(`${this.baseURL}/girls`);
+        }
 
-        imports: [
-        ]
+    getHelpTypes(): Observable<string[]> {
+        return this.http.get<string[]>(`${this.baseURL}/helps/types`);
+      }
+
+    offerHelp(helpId: number)  {
+        return this.http.post<any>(`${this.baseURL}/helps/got`, helpId);}
+
     }
-}
+    

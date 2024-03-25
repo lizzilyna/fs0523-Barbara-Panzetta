@@ -21,6 +21,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { DataService } from './services/data.service';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AlbumpageComponent } from './albumpage/albumpage.component';
+import { GotComponent } from './got/got.component';
+import { NeedComponent } from './need/need.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { AlbumpageComponent } from './albumpage/albumpage.component';
     HomeComponent,
     RegisterComponent,
     ToolbarComponent,
-    AlbumpageComponent
+    AlbumpageComponent,
+    GotComponent,
+    NeedComponent,
+    SearchComponent
     
   ],
   imports: [
