@@ -1,0 +1,59 @@
+
+.container {
+    padding: 20px;
+    background-color: #60ab9a; /* Utilizzo del colore Keppel */
+    height: 100vh;
+  }
+  
+  .figurine-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    
+  }
+  
+  .figurina {
+    position: relative; /* Posizione relativa per consentire posizionamento assoluto delle didascalie */
+    width: 300px;
+    margin-bottom: 70px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff; /* Colore White */
+    
+    
+  }
+  
+  .figurina img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: -5px
+    
+  }
+  
+  .figurina-details {
+    position: absolute; /* Posizione assoluta rispetto alla figurina */
+    bottom: -50px; /* Posizionamento sotto la figurina */
+    left: 0; /* Allineamento a sinistra */
+    right: 0; /* Allineamento a destra */
+    padding-top: 9px; /* Aggiusta il padding superiore */
+    padding-bottom: 2px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    background-color: #f0f600; /* Utilizzo del colore Yellow */
+    border-radius: 2px;
+    
+  }
+  
+  .nome {
+    display: none;
+    font-weight: bold;
+  }
+  
+  .descrizione {
+    color: #fc6467; /* Utilizzo del colore Keppel */
+  }
+  

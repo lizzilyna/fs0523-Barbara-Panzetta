@@ -1,5 +1,5 @@
 
-<p>
+<!--<p>
   <mat-toolbar class="gotneed" color="accent">
     
     <div><img src="assets/gotneed_transparent-03.png" alt="Logo" class="logo"></div>
@@ -19,18 +19,8 @@
       <mat-icon>share</mat-icon>
     </button>
   </mat-toolbar>
-</p>
+</p>*/
 
-<!-- home.component.html -->
-<div class="container">
-  <h1></h1>
-  <div class="figurine-container">
-    <div *ngFor="let mestiere of mestieri" class="figurina">
-      <img [src]="mestiere.image" alt="{{ mestiere.nome }}">
-      <div class="figurina-details">
-        <p class="nome">{{ mestiere.nome }}</p>
-        <p class="descrizione">{{ mestiere.descrizione }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+ home.component.html -->
+<app-toolbar></app-toolbar>
+<app-albumpage></app-albumpage>

@@ -19,6 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
 import { DataService } from './services/data.service';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AlbumpageComponent } from './albumpage/albumpage.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { DataService } from './services/data.service';
     AppComponent,
     GirlFormComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    ToolbarComponent,
+    AlbumpageComponent
     
   ],
   imports: [
