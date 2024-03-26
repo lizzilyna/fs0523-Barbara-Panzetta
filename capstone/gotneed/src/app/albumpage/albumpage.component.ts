@@ -13,5 +13,14 @@ export class AlbumpageComponent {
     { nome: 'Riparazioni e migliorie', descrizione: 'Sono io mio marito', image: 'assets/operaia.jpg' },
     // Aggiungi altri mestieri con le relative informazioni e immagini
   ];
+  selezionati: Set<string> = new Set();
+
+  toggleSelezione(nome: string) {
+    if (this.selezionati.has(nome)) {
+      this.selezionati.delete(nome);
+    } else {
+      this.selezionati.add(nome);
+    }
+  }
 
 }

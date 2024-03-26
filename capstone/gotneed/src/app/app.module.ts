@@ -24,6 +24,7 @@ import { AlbumpageComponent } from './albumpage/albumpage.component';
 import { GotComponent } from './got/got.component';
 import { NeedComponent } from './need/need.component';
 import { SearchComponent } from './search/search.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { SearchComponent } from './search/search.component';
     AlbumpageComponent,
     GotComponent,
     NeedComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent
     
   ],
   imports: [

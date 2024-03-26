@@ -14,7 +14,10 @@ export class DataService  {
     postGirl(data: any): Observable<any> {
         return this.http.post<any>(`${this.baseURL}/auth/register`, data);}
 
-
+    login(credentials: {username: string, password: string}): Observable<string> {
+            return this.http.post(`${this.baseURL}/auth/login`, credentials, {responseType:'text'});
+          }
+        
     getData(): Observable<any> {
         return this.http.get<any>(`${this.baseURL}/girls`);
         }
