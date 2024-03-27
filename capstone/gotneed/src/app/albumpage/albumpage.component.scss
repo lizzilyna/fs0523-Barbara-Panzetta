@@ -1,59 +1,108 @@
+:root {
+  --white: #ffffff;
+  --keppel: #60ab9a;
+  --french-rose: #ff4081;
+  --bittersweet: #fc6467;
+  --yellow: #f0f600;
+}
+
+
 
 .container {
-    padding: 20px;
-    background-color: #60ab9a; /* Utilizzo del colore Keppel */
-    height: 100vh;
-  }
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #60ab9a; /* Utilizzo del colore Keppel */
+  min-height: 100vh;
+}
+
+.figurine-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start; /* Modificato per allineare gli elementi all'inizio */
+}
+
+.figurina {
+  position: relative;
+  cursor: pointer;
+  width: 300px;
+  margin-bottom: 70px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff; /* Colore White */
+  transition: transform 0.3s ease; /* Aggiunto per effetto zoom */
+}
+
+.figurina:hover {
+  transform: scale(1.05); /* Effetto zoom al hover */
+}
+
+.figurina img {
+  margin-bottom: -5px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.figurina:hover img, .figurina.active img {
+  opacity: 1;
+}
+
+.figurina-details, .figurina-actions {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 10px;
   
-  .figurine-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
-    
-  }
-  
-  .figurina {
-    position: relative; /* Posizione relativa per consentire posizionamento assoluto delle didascalie */
-    width: 300px;
-    margin-bottom: 70px;
-    margin-left: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-    background-color: #ffffff; /* Colore White */
-    
-    
-  }
-  
-  .figurina img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: -5px
-    
-  }
-  
-  .figurina-details {
-    position: absolute; /* Posizione assoluta rispetto alla figurina */
-    bottom: -50px; /* Posizionamento sotto la figurina */
-    left: 0; /* Allineamento a sinistra */
-    right: 0; /* Allineamento a destra */
-    padding-top: 9px; /* Aggiusta il padding superiore */
-    padding-bottom: 2px;
-    text-align: center;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-    background-color: #f0f600; /* Utilizzo del colore Yellow */
-    border-radius: 2px;
-    
-  }
-  
-  .nome {
-    display: none;
-    font-weight: bold;
-  }
-  
-  .descrizione {
-    color: #fc6467; /* Utilizzo del colore Keppel */
-  }
-  
+  text-align: center;
+  transition: visibility 0.3s, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.figurina-details {
+  bottom: 60px; /* Posizione dei dettagli */
+  left: 0;
+  color: #fc6467; /* Utilizzo del colore Keppel per il testo */
+  background-color: #f0f600ff;
+}
+
+.figurina-actions {
+  bottom: 10px; /* Posizione dei pulsanti */
+  left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Distanza tra i pulsanti */
+}
+
+.figurina:hover .figurina-details, 
+.figurina:hover .figurina-actions,
+.figurina.active .figurina-details, 
+.figurina.active .figurina-actions {
+  visibility: visible; /* Mostra dettagli e pulsanti al hover */
+  opacity: 1;
+}
+
+button {
+  background-color: #FF4081; /* Colore French Rose */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  margin: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color:#60ab9a /* Colore Bittersweet per l'hover */
+}
+
+.nome, .descrizione {
+  color: #fc6467; /* Colore Bittersweet */
+  margin: 0; /* Rimuove il margine di default */
+}

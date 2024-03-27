@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -7,7 +7,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   templateUrl: './girl-form.component.html',
   styleUrls: ['./girl-form.component.scss']
 })
-export class GirlFormComponent {
+export class GirlFormComponent implements OnInit {
   girlForm: FormGroup;
 
   provinceOptions: string[] = [
@@ -25,73 +25,39 @@ export class GirlFormComponent {
   ];
   helpTypes: string[] = [];
   
-  nome: string = '';
-  cognome: string = '';
-  username: string = '';
-  password: string = '';
-  email: string = '';
-  provincia: string = '';
-  dataNascita: string = '';
-
- 
-  selectedHelpOfferti: string[] = []; 
-  selectedHelpRichiesti: string[] = []; 
-
-  constructor(
-    private fb: FormBuilder,
-    private dataService: DataService
-    ) {
-
-      this.girlForm = this.fb.group({
- 
-  nome: ['', Validators.required], 
-  cognome: ['', Validators.required],
-  username: ['', Validators.required],
-  password: ['', Validators.required],
-  email: ['', Validators.required], 
-  provincia: ['', Validators.required],
-  dataNascita: ['', Validators.required],
-
-    helpOfferti: [[], ], 
-    
-    helpRichiesti: [[], ] 
-      });
-  }
-
-  
-  convertHelpSelectionToIds(selectedHelp: any[]): number[] {
-    // Logica di conversione, dipende da come selezioni gli help nel form
-    return selectedHelp.map(help => help.id);
-  }
-
-  ngOnInit(): void {
-    this.dataService.getHelpTypes().subscribe(types => {
-      this.helpTypes = types;
+  constructor(private fb: FormBuilder, private dataService: DataService) {
+    this.girlForm = this.fb.group({
+      nome: ['', Validators.required],
+      cognome: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      email: ['', Validators.required],
+      provincia: ['', Validators.required],
+      dataNascita: ['', Validators.required],
+      helpOfferti: [[]],
+      helpRichiesti: [[]]
     });
   }
 
-  onSubmit() {
-    if (this.girlForm.valid) {
-      console.log(this.girlForm.value);
-      const formData = this.girlForm.value;
-      formData.helpOfferti = this.convertHelpSelectionToIds(this.selectedHelpOfferti);
-      formData.helpRichiesti = this.convertHelpSelectionToIds(this.selectedHelpRichiesti);
-    // invio al backend
-    this.dataService.postGirl(formData).subscribe (
-      response=> {
-        console.log('dati inviati al backend: ', response);
+  ngOnInit(): void {
+    // Recupera i tipi di help dall'enum nel backend all'inizializzazione del componente
+    this.dataService.getHelpTypes().subscribe(
+      (types) => {
+        this.helpTypes = types;
       },
-      error=> {
-        console.error(
-          `errore nell'invio dei dati al backend: `, error)
-        ;
-        
-      }
-      
+      (error) => console.error('Errore nel recuperare i tipi di help: ', error)
     );
-        
-      }
-  
+  }
+
+  onSubmit(): void {
+    if (this.girlForm.valid) {
+      const formData = this.girlForm.value;
+      // Non è necessario convertire i valori selezionati perché assumiamo
+      // che siano già nel formato corretto (stringhe corrispondenti ai valori dell'enum)
+      this.dataService.postGirl(formData).subscribe(
+        response => console.log('Dati inviati al backend: ', response),
+        error => console.error('Errore nell\'invio dei dati al backend: ', error)
+      );
+    }
   }
 }
-

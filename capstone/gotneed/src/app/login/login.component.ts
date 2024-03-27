@@ -20,8 +20,9 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       this.dataService.login(this.loginForm.value).subscribe({
-        next: (response) => {
-          console.log('Login completato', response);
+        next: (token) => {
+          localStorage.setItem ('authToken', token)
+          console.log('Login completato, token salvato');
           // Salva il token e naviga alla home o alla selezione degli help
         },
         error: (error) => console.error('Errore nel login', error),

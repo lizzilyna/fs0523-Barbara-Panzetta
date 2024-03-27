@@ -6,8 +6,7 @@
     flex: 1 1 auto;
   }
   .logo-container {
-    display: flex;
-    align-items: center; /* Centra verticalmente */
+    flex-wrap: wrap;
   }
   
   .logo {
@@ -61,4 +60,85 @@
   
   .navbutton {
     margin-right: 5px;
+  }
+
+
+
+
+
+
+
+
+
+  .gotneed {
+    display: flex;
+    align-items: center; /* Centra gli elementi verticalmente */
+    justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
+    flex-wrap: wrap; /* Permette agli elementi di andare a capo se non ci sta spazio */
+  }
+  
+  .logo {
+    flex-shrink: 0; /* Impedisce al logo di ridursi */
+    height: 100px;
+    width: auto;
+  }
+  
+  .navbutton, .example-icon {
+    flex-shrink: 0; /* Impedisce ai bottoni di ridursi */
+  }
+
+
+  @media (max-width: 768px) {
+    .example-flex-container, .example-button-container {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbutton {
+      margin-bottom: 10px;
+    }
+  
+    .example-button-row {
+      justify-content: center;
+    }
+  
+    .example-label {
+      display: block; /* Mette l'etichetta sopra i pulsanti */
+      margin-bottom: 5px;
+    }
+
+    .favorite-icon, .share-icon {
+      display: none;
+    }
+  }
+
+  
+
+  @media (max-width: 600px) {
+    .logo {
+      height: 50px; /* Riduce la dimensione del logo */
+    }
+  
+    .navbutton, .example-icon {
+      padding: 0 5px; /* Riduce il padding dei bottoni */
+      font-size: 12px; /* Diminuisce la dimensione del testo */
+    }
+  
+    .example-spacer {
+      display: none; /* Nasconde lo spacer per risparmiare spazio */
+    }
+
+    
+  }
+
+  @media (max-width: 400px) {
+    .navbutton, .example-icon {
+      min-width: 30px; /* Riduce la larghezza minima dei pulsanti */
+      padding: 0;
+    }
+  
+    .mat-icon {
+      font-size: 18px; /* Riduce la dimensione delle icone */
+    }
   }

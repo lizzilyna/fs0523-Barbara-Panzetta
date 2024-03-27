@@ -41,20 +41,20 @@
   </mat-form-field>
 
   <!-- Menu a tendina per gli help offerti -->
-  <!--<mat-form-field appearance="fill">
+  <mat-form-field appearance="fill">
     <mat-label>Help Offerti</mat-label>
     <mat-select formControlName="helpOfferti" multiple>
-      <mat-option *ngFor="let helpType of helpTypes" [value]="helpType">{{ helpType }}</mat-option>
+      <mat-option *ngFor="let type of helpTypes" [value]="type">{{ type }}</mat-option>
     </mat-select>
   </mat-form-field>
-
-   Menu a tendina per gli help richiesti 
+  
+  <!-- Help Richiesti -->
   <mat-form-field appearance="fill">
     <mat-label>Help Richiesti</mat-label>
     <mat-select formControlName="helpRichiesti" multiple>
-      <mat-option *ngFor="let helpType of helpTypes" [value]="helpType">{{ helpType }}</mat-option>
+      <mat-option *ngFor="let type of helpTypes" [value]="type">{{ type }}</mat-option>
     </mat-select>
-  </mat-form-field>-->
+  </mat-form-field>
 
 
   <button type="submit" [disabled]="!girlForm.valid" mat-raised-button color="accent">Invia</button>
