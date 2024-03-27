@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { map } from 'rxjs/operators';
 
 
 @Injectable ({
@@ -22,12 +23,18 @@ export class DataService  {
         return this.http.get<any>(`${this.baseURL}/girls`);
         }
 
-    getHelpTypes(): Observable<string[]> {
-        return this.http.get<string[]>(`${this.baseURL}/helps/types`);
-      }
+        getHelpTypes(): Observable<string[]> {
+            return this.http.get<string[]>(`${this.baseURL}/helps/types`).pipe(
+              map(types => types.map(type => this.transformHelpTypeName(type)))
+            );
+          }
 
     offerHelp(helpId: number)  {
         return this.http.post<any>(`${this.baseURL}/helps/got`, helpId);}
 
+        transformHelpTypeName(name: string): string {
+            // Sostituisce gli underscore con spazi e rende maiuscola la prima lettera di ogni parola
+            return name.toLowerCase().split('_').map(word => word.slice(0)).join(' ');
+
     }
-    
+}

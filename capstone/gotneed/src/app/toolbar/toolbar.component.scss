@@ -1,5 +1,12 @@
+
+.mat-toolbar {
+  border-radius: 8px;
+  //max-width: 90%;
+}
+
 .example-container mat-form-field + mat-form-field {
     margin-left: 8px;
+    border-radius: 8px;
   
   }
   .example-spacer {
@@ -87,7 +94,6 @@
     flex-shrink: 0; /* Impedisce ai bottoni di ridursi */
   }
 
-
   @media (max-width: 768px) {
     .example-flex-container, .example-button-container {
       justify-content: center;
@@ -108,9 +114,9 @@
       margin-bottom: 5px;
     }
 
-    .favorite-icon, .share-icon {
-      display: none;
-    }
+    //.favorite-icon, .share-icon {
+    //  display: none;
+    //}
   }
 
   

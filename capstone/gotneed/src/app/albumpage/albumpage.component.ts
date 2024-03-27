@@ -34,14 +34,14 @@ export class AlbumpageComponent  implements OnInit {
 
   getImageForHelpType(type: string): string {
     const helpImageMap: { [key: string]: string } ={ 
-      "AIUTO_COMPITI": "assets/mestieri/compiti.jpg",
-      "AIUTO_DOMESTICO": "assets/mestieri/house-keeping.jpg",
-      "ASSISTENZA_ANZIANI":"assets/mestieri/anziana.jpg",
-      "BABY_SITTING": "assets/mestieri/baby sitting.jpg",
-      "GIARDINAGGIO": "assets/mestieri/piante.jpg",
-      "PET_SITTING": "assets/mestieri/dog-sitter.jpg",
-      "RIPARAZIONI": "assets/mestieri/operaia.jpg",
-      "SERVIZIO_AUTO": "assets/mestieri/autista.jpg"
+      "aiuto compiti": "assets/mestieri/compiti.jpg",
+      "aiuto domestico": "assets/mestieri/house-keeping.jpg",
+      "assistenza anziani":"assets/mestieri/anziana.jpg",
+      "baby sitting": "assets/mestieri/baby sitting.jpg",
+      "giardinaggio": "assets/mestieri/piante.jpg",
+      "pet sitting": "assets/mestieri/dog-sitter.jpg",
+      "riparazioni": "assets/mestieri/operaia.jpg",
+      "servizio auto": "assets/mestieri/autista.jpg"
       
   };
 
