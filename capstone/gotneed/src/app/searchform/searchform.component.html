@@ -1,0 +1,22 @@
+<form>
+
+    <div>
+    <select [(ngModel)]="selectedProvincia" name="provincia">
+        <option value="" disabled selected>Seleziona una provincia</option>
+      <option *ngFor="let provincia of provinceOptions" [value]="provincia">{{provincia}}</option>
+    </select>
+  </div>
+  <div>
+    <select [(ngModel)]="selectedHelpType" name="helpType">
+        <option value="" disabled selected>Seleziona un tipo di help</option>
+      <option *ngFor="let type of helpTypes" [value]="type">{{type}}</option>
+    </select>
+  </div>
+ <div>
+    <button type="button" (click)="searchOfferedHelps()">Cerca Help Offerti</button>
+</div>
+ 
+<div>
+  <button type="button" (click)="searchRequestedHelps()">Cerca Help Richiesti</button>
+</div>
+ </form> 

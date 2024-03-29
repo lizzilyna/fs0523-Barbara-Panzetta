@@ -25,6 +25,11 @@ import { GotComponent } from './got/got.component';
 import { NeedComponent } from './need/need.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { SearchformComponent } from './searchform/searchform.component';
 
 
 @NgModule({
@@ -38,7 +43,9 @@ import { LoginComponent } from './login/login.component';
     GotComponent,
     NeedComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    SearchformComponent
     
   ],
   imports: [
@@ -56,8 +63,10 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    CommonModule 
-    
+    CommonModule,
+    MatSidenavModule, 
+    MatListModule,
+    MatTableModule,
     
   ],
   providers: [

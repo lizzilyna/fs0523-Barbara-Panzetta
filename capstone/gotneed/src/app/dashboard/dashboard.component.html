@@ -1,0 +1,16 @@
+
+<section>
+  
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav mode="side" opened><mat-list role="list">
+        <mat-list-item role="listitem" routerLink="got" [routerLinkActive]="'active'">Got</mat-list-item>
+        <mat-list-item role="listitem" routerLink="need" [routerLinkActive]="'active'">Need</mat-list-item>
+        <mat-list-item role="listitem" routerLink="search" [routerLinkActive]="'active'">Search</mat-list-item>
+
+        <mat-list-item role="listitem" routerLink="">Home</mat-list-item>
+        
+      </mat-list>
+       </mat-sidenav>
+      <mat-sidenav-content><app-toolbar></app-toolbar><app-searchform></app-searchform><router-outlet></router-outlet></mat-sidenav-content>
+    </mat-sidenav-container>
+  </section>

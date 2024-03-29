@@ -55,8 +55,9 @@ export class GirlFormComponent implements OnInit {
       // Non è necessario convertire i valori selezionati perché assumiamo
       // che siano già nel formato corretto (stringhe corrispondenti ai valori dell'enum)
       this.dataService.postGirl(formData).subscribe(
-        response => console.log('Dati inviati al backend: ', response),
-        error => console.error('Errore nell\'invio dei dati al backend: ', error)
+        response => console.log('Dati inviati al backend: ', formData, response),
+        error => {console.error('Errore nell\'invio dei dati al backend: ', error); console.log(formData);
+        }
       );
     }
   }
