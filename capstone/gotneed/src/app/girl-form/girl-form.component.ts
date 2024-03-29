@@ -52,11 +52,26 @@ export class GirlFormComponent implements OnInit {
   onSubmit(): void {
     if (this.girlForm.valid) {
       const formData = this.girlForm.value;
+
       // Non è necessario convertire i valori selezionati perché assumiamo
       // che siano già nel formato corretto (stringhe corrispondenti ai valori dell'enum)
       this.dataService.postGirl(formData).subscribe(
-        response => console.log('Dati inviati al backend: ', formData, response),
-        error => {console.error('Errore nell\'invio dei dati al backend: ', error); console.log(formData);
+        response => {
+          console.log('Dati inviati al backend: ', response)
+          const data = {
+            type: formData.helpOfferti[0],
+            offeredById: response.id,
+            requestedById: null
+          }
+          this.dataService.offerHelp(data).subscribe(response => {
+            console.log('Dati inviati al backend: ', response)
+          }, error => {
+            console.error('Errore con creazione aiuto: ', error); console.log(data);
+          } )
+
+        },
+        error => {
+          console.error('Errore nell\'invio dei dati al backend: ', error); console.log(formData);
         }
       );
     }

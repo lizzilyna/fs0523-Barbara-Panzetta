@@ -32,8 +32,8 @@ export class DataService  {
            // );
           }
 
-    offerHelp(helpId: number)  {
-        return this.http.post<any>(`${this.baseURL}/helps/got`, helpId);}
+    offerHelp(data: any): Observable<any>  {
+        return this.http.post<any>(`${this.baseURL}/helps`, data);}
 
        // transformHelpTypeName(name: string): string {
             // Sostituisce gli underscore con spazi e rende maiuscola la prima lettera di ogni parola
