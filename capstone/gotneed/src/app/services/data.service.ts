@@ -42,16 +42,7 @@ export class DataService  {
    // }
 
      
-      getRequestedHelpByProvincia(provincia: string, type: string, page: number, size: number): Observable<PageableResponse<Help>> {
-        // Assumi che 'type' arrivi in formato leggibile, come "Aiuto Compiti"
-        // Converti 'type' in formato ENUM, es. "AIUTO_COMPITI"
-             
-        // Costruisci l'URL con il tipo convertito
-        const url = `${this.baseURL}/helps/requested?provincia=${provincia}&type=${type}&page=${page}&size=${size}`;
-        
-        // Esegui la chiamata GET
-        return this.http.get<PageableResponse<Help>>(url);
-      }
+     
       
       getOfferedHelpByProvincia(provincia: string, type: string, page: number, size: number): Observable<PageableResponse<Help>> {
         // Utilizza direttamente 'type' senza conversione

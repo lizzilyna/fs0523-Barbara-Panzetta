@@ -8,13 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './albumpage.component.scss'
 })
 export class AlbumpageComponent  implements OnInit {
-  mestieri:any[] = [
-    /*{ nome: 'Autista', descrizione: 'Vuoi uno strappo?', image: 'assets/autista.jpg' },
-    { nome: 'Dog-sitter', descrizione: 'Facciamo un giro', image: 'assets/dog-sitter.jpg' },
-    { nome: 'Aiuto domestico', descrizione: 'Mettiamo in ordine', image: 'assets/house-keeping.jpg' },
-    { nome: 'Riparazioni e migliorie', descrizione: 'Sono io mio marito', image: 'assets/operaia.jpg' },
-    */
-  ];
+  mestieri:any[] = [];
 
 
   constructor(
@@ -22,7 +16,7 @@ export class AlbumpageComponent  implements OnInit {
     private router: Router
     ) {}
 
-  ngOnInit(): void {
+ngOnInit(): void {
     this.dataservice.getHelpTypes().subscribe((types:string[])=> {
       this.mestieri=types.map(type=>({
         nome: type,
@@ -31,22 +25,23 @@ export class AlbumpageComponent  implements OnInit {
       }));
     });
   }
-
-  getImageForHelpType(type: string): string {
+    getImageForHelpType(type: string): string {
     const helpImageMap: { [key: string]: string } ={ 
-      "aiuto compiti": "assets/mestieri/compiti.jpg",
-      "aiuto domestico": "assets/mestieri/house-keeping.jpg",
-      "assistenza anziani":"assets/mestieri/anziana.jpg",
-      "baby sitting": "assets/mestieri/baby sitting.jpg",
-      "giardinaggio": "assets/mestieri/piante.jpg",
-      "pet sitting": "assets/mestieri/dog-sitter.jpg",
-      "riparazioni": "assets/mestieri/operaia.jpg",
-      "servizio auto": "assets/mestieri/autista.jpg"
+      "AIUTO_COMPITI": "assets/mestieri/compiti.jpg",
+      "AIUTO_DOMESTICO": "assets/mestieri/house-keeping.jpg",
+      "ASSISTENZA_ANZIANI":"assets/mestieri/anziana.jpg",
+      "BABY_SITTING": "assets/mestieri/baby sitting.jpg",
+      "GIARDINAGGIO": "assets/mestieri/piante.jpg",
+      "PET_SITTING": "assets/mestieri/dog-sitter.jpg",
+      "RIPARAZIONI": "assets/mestieri/operaia.jpg",
+      "SERVIZIO_AUTO": "assets/mestieri/autista.jpg"
       
-  };
-
-return helpImageMap[type] || 'assets/mestieri/default.jpg';
+  }
+  
+  ;return helpImageMap[type] || 'assets/mestieri/default.jpg';
 }
+
+
 
 
 redirectToRegistration() {
@@ -71,6 +66,82 @@ need(nome: string) {
   // Aggiungi qui la logica per aggiornare l'elenco degli aiuti richiesti
 }
 }
+
+
+
+
+
+
+  /*ngOnInit(): void {
+      this.dataservice.getHelpTypes().subscribe((types:string[]) => {
+        this.mestieri = types.map(type => this.getHelpTypeDetails(type));
+      });
+    }*/
+
+ /*
+
+  /*getHelpTypeDetails(type: string): { label: string, descrizione: string, image: string } {
+    const helpDetailsMap: { [key: string]: { label: string, descrizione: string, image: string } } = {
+     
+      "AIUTO_COMPITI": {
+        label: "aiuto compiti",
+        descrizione: "lasciate che i pargoli etc",
+        image: "assets/mestieri/compiti.jpg"
+      },
+      
+      "AIUTO_DOMESTICO": {
+        label: "aiuto domestico",
+        descrizione: "solo per casalinghe veramente disperate",
+        image: "assets/mestieri/house-keeping.jpg"
+      },
+
+      "ASSISTENZA_ANZIANI": {
+        label: "assistenza anziani",
+        descrizione: "non è mai troppo tardi per avere un'infanzia felice",
+        image: "assets/mestieri/anziana.jpg"
+      },
+      
+      "BABY_SITTING": {
+         label: "baby sitting",
+         descrizione: "cucù!",
+         image: "assets/mestieri/baby sitting.jpg"
+          },
+       
+      "GIARDINAGGIO": {
+        label: "giardinaggio",
+        descrizione: "o plant-parenting, più cool",
+        image: "assets/mestieri/piante.jpg"    
+      },
+
+      "PET_SITTING": {
+        label: "pet sitting",
+        descrizione: "vieni, bello!",
+        image:"assets/mestieri/dog-sitter.jpg"
+      },
+      // Aggiungi altri qui...
+            
+      "RIPARAZIONI": {
+      label: "riparazione",
+      descrizione: "sono io mio marito",
+      image: "assets/mestieri/operaia.jpg",
+          },
+          
+      "SERVIZIO_AUTO": {
+      label: "servizio auto",
+      descrizione: "Vestiti, usciamo",
+      image: "assets/mestieri/autista.jpg"
+          }
+        };
+
+        return helpDetailsMap[type] || {
+          label: "Non Specificato",
+          descrizione: "Descrizione non disponibile",
+          image: "assets/mestieri/default.jpg"
+        };
+      }
+      
+    
+   */
 
 
   /*selezionati: Set<string> = new Set();

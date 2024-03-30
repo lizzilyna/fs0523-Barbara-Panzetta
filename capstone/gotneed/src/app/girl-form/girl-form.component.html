@@ -58,37 +58,41 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-
-      <mat-form-field appearance="fill" class="form-field">
-        <mat-label>Data di nascita</mat-label>
-        <input matInput type="date" formControlName="dataNascita" required>
-      </mat-form-field>
-    </div>
+ <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" required>
+        </mat-form-field>
+      </div>
+    
 
     <!-- Raggruppamento quarto di campi -->
     <div class="form-row">
+      
+      
       <mat-form-field appearance="fill" class="form-field">
         <mat-label>Help Offerti</mat-label>
         <mat-select formControlName="helpOfferti" multiple>
           <mat-option *ngFor="let type of helpTypes" [value]="type">{{ type }}</mat-option>
         </mat-select>
       </mat-form-field>
-
-      <mat-form-field appearance="fill" class="form-field">
+      
+<div class="form-row">  
+  <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Data di nascita</mat-label>
+        <input matInput type="date" formControlName="dataNascita" required>
+      </mat-form-field>
+    </div>
+       
+        <!--<mat-form-field appearance="fill" class="form-field">
         <mat-label>Help Richiesti</mat-label>
         <mat-select formControlName="helpRichiesti" multiple>
           <mat-option *ngFor="let type of helpTypes" [value]="type">{{ type }}</mat-option>
         </mat-select>
-      </mat-form-field>
+         </mat-form-field>-->
     </div>
 
         <!-- Campo Email su una propria riga -->
-        <div class="form-row">
-          <mat-form-field appearance="fill" class="form-field">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" formControlName="email" required>
-          </mat-form-field>
-        </div>
+
     
 
     <button type="submit" [disabled]="!girlForm.valid" class="submit-button">Invia</button>

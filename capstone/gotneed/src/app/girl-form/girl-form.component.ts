@@ -35,7 +35,7 @@ export class GirlFormComponent implements OnInit {
       provincia: ['', Validators.required],
       dataNascita: ['', Validators.required],
       helpOfferti: [[]],
-      helpRichiesti: [[]]
+      //helpRichiesti: [[]]
     });
   }
 

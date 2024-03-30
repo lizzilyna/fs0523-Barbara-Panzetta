@@ -32,7 +32,7 @@ export class SearchformComponent implements OnInit {
   dataSource: Help[]= [];
 
 
-  @Output() requestedHelpsFound = new EventEmitter<Help[]>();
+//  @Output() requestedHelpsFound = new EventEmitter<Help[]>();
   @Output() offeredHelpsFound = new EventEmitter<Help[]>();
 
 
@@ -47,16 +47,7 @@ export class SearchformComponent implements OnInit {
       this.helpTypes = types;
     });
   }
-  searchRequestedHelps() {
-    // Logic to call DataService with selectedProvincia and selectedHelpType
-    // For example:
-    this.dataService.getOfferedHelpByProvincia(this.selectedProvincia, this.selectedHelpType, 0, 10).subscribe(
-      data => {
-        this.dataSource = data.content; // Aggiorna la tabella con i risultati
-      },
-      error => console.error('Errore nella ricerca degli help: ', error)
-    );
-  }
+
  searchOfferedHelps() {
       this.dataService.getOfferedHelpByProvincia(this.selectedProvincia, this.selectedHelpType, 0, 10)
       .subscribe(data => {
