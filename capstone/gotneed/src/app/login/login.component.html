@@ -28,6 +28,6 @@
       <input type="password" id="password" formControlName="password" required placeholder="Password">
     </div>
 
-    <button type="submit" [disabled]="!loginForm.valid" class="yellow-button">Login</button>
+    <button type="submit" [disabled]="!loginForm.valid" class="yellow-button" routerLink="/dashboard">Login</button>
   </form>
 </div>
