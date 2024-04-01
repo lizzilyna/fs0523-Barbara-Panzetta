@@ -1,0 +1,54 @@
+/* Stilizzazione del contenitore del form */
+.contact-form-container {
+    background-color: #f0f0f0; /* Sfondo leggero per il form */
+    padding: 20px; /* Spazio intorno ai campi del form */
+    border-radius: 8px; /* Bordi arrotondati del contenitore */
+    max-width: 600px; /* Larghezza massima del contenitore */
+    margin: 40px auto; /* Centra il contenitore con un margine superiore e inferiore */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra sottile per profondità */
+  }
+  
+  /* Stilizzazione generale dei campi del form */
+  .contact-form-container input[type="text"],
+  .contact-form-container input[type="email"],
+  .contact-form-container textarea {
+    width: 100%; /* Assicura che i campi occupino tutta la larghezza del contenitore */
+    padding: 10px; /* Spazio interno per rendere il testo più leggibile */
+    margin-bottom: 20px; /* Spazio tra i campi */
+    border: 1px solid #ccc; /* Bordo sottile */
+    border-radius: 10px; /* Bordi arrotondati per i campi */
+    box-sizing: border-box; /* Assicura che padding e bordo siano inclusi nella larghezza */
+  }
+  
+  .contact-form-container textarea {
+    height: 100px; /* Altezza fissata per l'area di testo */
+  }
+  
+  /* Stilizzazione dei pulsanti */
+  .contact-form-container button {
+    padding: 10px 20px; /* Spazio intorno al testo del pulsante */
+    border-radius: 20px; /* Bordi arrotondati */
+    border: none; /* Nessun bordo */
+    cursor: pointer; /* Cambia il cursore per indicare la possibilità di clic */
+    margin-right: 10px; /* Spazio tra i pulsanti */
+  }
+  
+  /* Pulsante Invia */
+  .contact-form-container button[type="submit"] {
+    background-color: #ff4081; /* Colore di sfondo */
+    color: #ffffff; /* Colore del testo */
+  }
+  
+  /* Pulsante Annulla */
+  .contact-form-container button[type="button"] {
+    background-color: #cccccc; /* Grigio */
+    color: #333333; /* Quasi nero */
+  }
+  
+  .contact-form-container button[type="submit"]:hover,
+  .contact-form-container button[type="button"]:hover {
+    opacity: 0.9; /* Leggera trasparenza al passaggio del mouse */
+  }
+
+  
+  

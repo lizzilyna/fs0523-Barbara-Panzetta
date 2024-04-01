@@ -15,16 +15,16 @@
     <button type="button" (click)="searchHelps()">Cerca Help Offerti</button>
   </div>
  
-  <div *ngIf="usernames.length > 0">
+  <div *ngIf="usernames.length > 0" class="results-container">
     <ul>
-      <p>Evviva! A {{selectedProvincia}} c'è qualcuna che offre un servizio di {{selectedHelpType}}! </p>
+      <p class="feedback-message positive-feedback">Evviva! A {{selectedProvincia}} c'è qualcuna che offre un servizio di {{selectedHelpType}}! </p>
       <li *ngFor="let username of usernames">
         <a href="#" (click)="openContactForm(username, $event)">{{ username }}</a> <!-- Modifica qui -->
       </li>
     </ul>
   </div>
 
-  <div *ngIf="searched && usernames.length === 0">
-    <p>Oh, no! A {{selectedProvincia}} non c'è ancora nessuna che offre un servizio di {{selectedHelpType}}.</p>
+  <div *ngIf="searched && usernames.length === 0" class="results-container">
+    <p class="feedback-message negative-feedback">Oh, no! A {{selectedProvincia}} non c'è ancora nessuna che offre un servizio di {{selectedHelpType}}.</p>
   </div>
 </form>

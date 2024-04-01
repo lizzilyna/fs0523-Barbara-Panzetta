@@ -74,3 +74,49 @@
   select option[disabled]:first-child {
     color: #ff4081; /* French Pink per il testo del placeholder */
   }
+
+  
+
+
+  /* Utilizza gli stili generali definiti precedentemente e aggiungi questi per la lista degli username */
+.results-container {
+  background-color: #f0f0f0; /* Sfondo leggero */
+  padding: 20px; /* Spazio intorno agli elementi */
+  border-radius: 8px; /* Bordi arrotondati del contenitore */
+  max-width: 600px; /* Larghezza massima del contenitore */
+  margin: 40px auto; /* Centra il contenitore con un margine superiore e inferiore */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra sottile per profondità */
+}
+
+.results-container p {
+  color: #333; /* Colore del testo più scuro per maggiore leggibilità */
+  font-size: 16px; /* Dimensione del font */
+  text-align: center; /* Centra il testo */
+}
+
+.results-container ul {
+  list-style-type: none; /* Rimuove i bullet points */
+  padding: 0;
+  text-align: center; /* Centra gli elementi della lista */
+}
+
+.results-container ul li {
+  display: inline-block; /* Rende gli elementi della lista orizzontali */
+  margin: 10px 20px; /* Spazio tra gli elementi della lista */
+}
+
+.results-container ul li a {
+  color: #FF4081; /* Colore personalizzato per i link */
+  text-decoration: none; /* Rimuove il sottolineato */
+  font-weight: bold;
+  background-color: #f0f600; /* Sfondo giallo per evidenziare */
+  padding: 5px 10px; /* Padding intorno al testo */
+  border-radius: 20px; /* Bordi arrotondati per i link */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leggera ombra per profondità */
+  transition: background-color 0.3s, color 0.3s; /* Transizione fluida per hover */
+}
+
+.results-container ul li a:hover {
+  background-color: #ff4081; /* Cambia il colore di sfondo al passaggio del mouse */
+  color: #ffffff; /* Cambia il colore del testo al passaggio del mouse */
+}
