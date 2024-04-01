@@ -1,28 +1,30 @@
 <form>
-
-    <div>
+  <div>
     <select [(ngModel)]="selectedProvincia" name="provincia">
-        <option value="" disabled selected>Seleziona una provincia</option>
+      <option value="" disabled selected>Seleziona una provincia</option>
       <option *ngFor="let provincia of provinceOptions" [value]="provincia">{{provincia}}</option>
     </select>
   </div>
   <div>
     <select [(ngModel)]="selectedHelpType" name="helpType">
-        <option value="" disabled selected>Seleziona un tipo di help</option>
+      <option value="" disabled selected>Seleziona un tipo di help</option>
       <option *ngFor="let type of helpTypes" [value]="type">{{type}}</option>
     </select>
   </div>
- <div>
+  <div>
     <button type="button" (click)="searchHelps()">Cerca Help Offerti</button>
-</div>
+  </div>
  
-<div *ngIf="usernames.length > 0">
-  <ul>
-      <li *ngFor="let username of usernames">{{ username }}</li>
-  </ul>
-  
-</div>
-<div *ngIf="usernames.length === 0">
-  Nessun risultato trovato.
-</div>
- </form> 
+  <div *ngIf="usernames.length > 0">
+    <ul>
+      <p>Evviva! A {{selectedProvincia}} c'è qualcuna che offre un servizio di {{selectedHelpType}}! </p>
+      <li *ngFor="let username of usernames">
+        <a href="#" (click)="openContactForm(username, $event)">{{ username }}</a> <!-- Modifica qui -->
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="searched && usernames.length === 0">
+    <p>Oh, no! A {{selectedProvincia}} non c'è ancora nessuna che offre un servizio di {{selectedHelpType}}.</p>
+  </div>
+</form>

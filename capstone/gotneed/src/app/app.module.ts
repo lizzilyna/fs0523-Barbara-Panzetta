@@ -30,6 +30,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { SearchformComponent } from './searchform/searchform.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { SearchformComponent } from './searchform/searchform.component';
     SearchComponent,
     LoginComponent,
     DashboardComponent,
-    SearchformComponent
+    SearchformComponent,
+    ContactFormComponent
     
   ],
   imports: [
@@ -67,7 +70,7 @@ import { SearchformComponent } from './searchform/searchform.component';
     MatSidenavModule, 
     MatListModule,
     MatTableModule,
-    
+    MatDialogModule,
   ],
   providers: [
     DataService

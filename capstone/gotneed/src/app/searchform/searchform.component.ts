@@ -2,7 +2,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { OnInit } from '@angular/core';
 import { Help } from '../models/help.model';
-
+import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactFormComponent } from '../contact-form/contact-form.component';
 
 
 @Component({
@@ -31,10 +33,12 @@ export class SearchformComponent implements OnInit {
   helpTypes: string[] = [];
   dataSource: Help[]= [];
   usernames: string[] = [];
+  searched: boolean = false;
+  selectedUsername: string = ''
 
 
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadHelpTypes();
@@ -55,6 +59,8 @@ export class SearchformComponent implements OnInit {
       console.error('Tipo di aiuto e provincia devono essere selezionati');
       return;
     }
+
+    this.searched=true;
     
     this.dataService.getHelpUsernames(this.selectedHelpType, this.selectedProvincia)
       .subscribe(usernames => {
@@ -64,17 +70,31 @@ export class SearchformComponent implements OnInit {
       });
   }
 
- searchOfferedHelps() {
-      this.dataService.getOfferedHelpByProvincia(this.selectedProvincia, this.selectedHelpType, 0, 10)
-      .subscribe(data => {
-        this.dataSource = data.content; // Aggiorna la tabella con i risultati
-      },
-      error => console.error('Errore nella ricerca degli help: ', error)
-    );
+ 
       
+  
+
+  openContactForm(username: string, event: MouseEvent): void {
+    event.preventDefault();
+
+    const dialogRef = this.dialog.open(ContactFormComponent, {
+        width: '500px',
+        data: { username: username }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+        console.log('Dialog chiuso', result);
+    });
+
+    //this.selectedUsername=username;
+    // Esegui qui l'azione desiderata quando l'utente clicca sul pulsante "Contattala"
+    // Ad esempio, puoi reindirizzare l'utente a un modulo di contatto con il nome utente preimpostato
   }
 
 
-
-  
+  contactUser(email: string) {
+    // Apri il client di posta elettronica predefinito dell'utente con l'indirizzo email preimpostato
+    window.location.href = `mailto:${email}`;
+  }
 }
+ 
