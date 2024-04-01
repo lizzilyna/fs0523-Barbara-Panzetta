@@ -1,19 +1,30 @@
+// search.component.ts
 import { Component, OnInit } from '@angular/core';
-import { Help } from '../models/help.model';
-
-
-
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrl: './search.component.scss'
+  styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit{
+export class SearchComponent implements OnInit {
+  provinceOptions = ['Roma', 'Milano', 'Napoli']; // Esempio di opzioni
+  helpTypes = ['GIARDINAGGIO', 'BABY_SITTING']; // Esempio di tipi di aiuto
+  selectedProvincia: string='';
+  selectedHelpType: string='';
+  usernames: string[] = [];
+
+  constructor(private dataService: DataService) {}
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
- 
-  displayedColumns: string[] = ['id', 'type', 'provincia']; // Aggiorna con i campi corretti di Help
-  dataSource: Help[] = []; // Usa l'interfaccia Help anziché PeriodicElement
- }
+
+  /*searchHelps() {
+    this.dataService.getHelpUsernames(this.selectedHelpType, this.selectedProvincia)
+      .subscribe(usernames => {
+        this.usernames = usernames;
+      }, error => {
+        console.error('Errore nella ricerca: ', error);
+      });
+  }*/
+}

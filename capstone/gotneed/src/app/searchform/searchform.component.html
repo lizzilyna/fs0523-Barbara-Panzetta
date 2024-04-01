@@ -13,8 +13,16 @@
     </select>
   </div>
  <div>
-    <button type="button" (click)="searchOfferedHelps()">Cerca Help Offerti</button>
+    <button type="button" (click)="searchHelps()">Cerca Help Offerti</button>
 </div>
  
-
+<div *ngIf="usernames.length > 0">
+  <ul>
+      <li *ngFor="let username of usernames">{{ username }}</li>
+  </ul>
+  
+</div>
+<div *ngIf="usernames.length === 0">
+  Nessun risultato trovato.
+</div>
  </form> 

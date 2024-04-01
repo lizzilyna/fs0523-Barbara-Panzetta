@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from 'rxjs/operators';
 import { Help } from "../models/help.model";
@@ -50,5 +50,10 @@ export class DataService  {
         return this.http.get<PageableResponse<Help>>(url);
 
         
+        
+              }
+
+              getHelpUsernames(type: string, provincia: string): Observable<string[]> {
+                return this.http.get<string[]>(`${this.baseURL}/girls/usernames?type=${type}&provincia=${provincia}`);
               }
 }

@@ -30,22 +30,38 @@ export class SearchformComponent implements OnInit {
   ];
   helpTypes: string[] = [];
   dataSource: Help[]= [];
+  usernames: string[] = [];
 
-
-//  @Output() requestedHelpsFound = new EventEmitter<Help[]>();
-  @Output() offeredHelpsFound = new EventEmitter<Help[]>();
 
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.loadHelpTypes();
+    
   }
 
   loadHelpTypes(): void {
+    // Qui la logica per caricare i tipi di aiuto, esempio:
     this.dataService.getHelpTypes().subscribe(types => {
       this.helpTypes = types;
     });
+  }
+
+
+
+  searchHelps() {
+    if (!this.selectedHelpType || !this.selectedProvincia) {
+      console.error('Tipo di aiuto e provincia devono essere selezionati');
+      return;
+    }
+    
+    this.dataService.getHelpUsernames(this.selectedHelpType, this.selectedProvincia)
+      .subscribe(usernames => {
+        this.usernames = usernames;
+      }, error => {
+        console.error('Errore nella ricerca: ', error);
+      });
   }
 
  searchOfferedHelps() {
@@ -57,6 +73,8 @@ export class SearchformComponent implements OnInit {
     );
       
   }
+
+
 
   
 }
