@@ -32,6 +32,7 @@ import { MatTableModule } from '@angular/material/table';
 import { SearchformComponent } from './searchform/searchform.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     MatListModule,
     MatTableModule,
     MatDialogModule,
+    MatSnackBarModule,
   ],
   providers: [
     DataService

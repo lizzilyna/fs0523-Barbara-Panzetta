@@ -5,7 +5,7 @@ import { ContactFormService } from '../services/contactForm.service';
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.scss'] // Assicurati che sia 'styleUrls' e non 'styleUrl'
+  styleUrls: ['./contact-form.component.scss'] 
 })
 export class ContactFormComponent {
   email: string = ''; 
@@ -16,7 +16,7 @@ export class ContactFormComponent {
   constructor(
     public dialogRef: MatDialogRef<ContactFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private contactFormService: ContactFormService // Inietta il tuo servizio per l'invio dei dati
+    private contactFormService: ContactFormService 
   ) {
     
   }
@@ -27,7 +27,7 @@ export class ContactFormComponent {
 
   submitForm(): void {
     const formData = {
-    recipient: this.email, // Assicurati che questi campi corrispondano a quelli attesi dal backend
+    recipient: this.email, 
     subject: this.subject,
     message: this.message
     };
@@ -37,7 +37,7 @@ export class ContactFormComponent {
       response => {
         // Gestisce la risposta di successo
         this.dialogRef.close(); // Chiude il dialog dopo l'invio con successo
-        // Qui potresti anche mostrare un messaggio di successo all'utente
+       
       },
       error => {
         // Gestisce eventuali errori

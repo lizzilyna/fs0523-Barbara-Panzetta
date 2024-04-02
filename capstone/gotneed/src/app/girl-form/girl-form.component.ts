@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -25,7 +27,7 @@ export class GirlFormComponent implements OnInit {
   ];
   helpTypes: string[] = [];
   
-  constructor(private fb: FormBuilder, private dataService: DataService) {
+  constructor(private fb: FormBuilder, private dataService: DataService, private router: Router, private snackBar: MatSnackBar) {
     this.girlForm = this.fb.group({
       nome: ['', Validators.required],
       cognome: ['', Validators.required],
@@ -49,12 +51,50 @@ export class GirlFormComponent implements OnInit {
     );
   }
 
+
   onSubmit(): void {
     if (this.girlForm.valid) {
       const formData = this.girlForm.value;
+  
+      this.dataService.postGirl(formData).subscribe(
+        response => {
+          console.log('Dati inviati al backend: ', response);
+          const data = {
+            type: formData.helpOfferti[0],
+            offeredById: response.id,
+            requestedById: null
+          };
+          this.dataService.offerHelp(data).subscribe(
+            response => {
+              console.log('Dati inviati al backend per l\'offerta di aiuto: ', response);
+             }, error => {
+                console.error('Errore con creazione aiuto: ', error);
+              }
+            );
+              // Notifica di successo
+              this.snackBar.open('Registrazione avvenuta con successo!', 'Chiudi', {
+                duration: 5000,
+              });
+  
+              // Reindirizzamento dopo la chiusura dello snackBar
+              setTimeout(() => {
+                this.router.navigate(['/dashboard']); // Sostituisci con il percorso desiderato
+              }, 700);
+            }, 
+     
+        
+        error => {
+          console.error('Errore nell\'invio dei dati al backend: ', error);
+        }
+      );
+    }
+  }
 
-      // Non è necessario convertire i valori selezionati perché assumiamo
-      // che siano già nel formato corretto (stringhe corrispondenti ai valori dell'enum)
+
+ /* onSubmit(): void {
+    if (this.girlForm.valid) {
+      const formData = this.girlForm.value;
+
       this.dataService.postGirl(formData).subscribe(
         response => {
           console.log('Dati inviati al backend: ', response)
@@ -75,5 +115,9 @@ export class GirlFormComponent implements OnInit {
         }
       );
     }
-  }
+  }*/
+
+
+
+
 }
