@@ -10,7 +10,7 @@
   
   /* Stilizzazione generale dei campi del form */
   .contact-form-container input[type="text"],
-  .contact-form-container input[type="email"],
+  
   .contact-form-container textarea {
     width: 100%; /* Assicura che i campi occupino tutta la larghezza del contenitore */
     padding: 10px; /* Spazio interno per rendere il testo più leggibile */
@@ -20,6 +20,11 @@
     box-sizing: border-box; /* Assicura che padding e bordo siano inclusi nella larghezza */
   }
   
+
+  .contact-form-container input[type="email"]{
+    display: none;
+  }
+
   .contact-form-container textarea {
     height: 100px; /* Altezza fissata per l'area di testo */
   }

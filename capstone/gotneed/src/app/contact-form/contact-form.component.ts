@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ContactFormService } from '../services/contactForm.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contact-form',
@@ -15,8 +16,9 @@ export class ContactFormComponent {
 
   constructor(
     public dialogRef: MatDialogRef<ContactFormComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private contactFormService: ContactFormService 
+   // @Inject(MAT_DIALOG_DATA) public data: any,
+    //private contactFormService: ContactFormService 
+    private snackBar: MatSnackBar
   ) {
     
   }
@@ -26,23 +28,9 @@ export class ContactFormComponent {
   }
 
   submitForm(): void {
-    const formData = {
-    recipient: this.email, 
-    subject: this.subject,
-    message: this.message
-    };
+    this.dialogRef.close();
+    this.snackBar.open('Messaggio inviato!', 'Chiudi', { duration: 3000})
 
     // Chiama il servizio per inviare i dati al backend
-    this.contactFormService.sendContactForm(formData).subscribe(
-      response => {
-        // Gestisce la risposta di successo
-        this.dialogRef.close(); // Chiude il dialog dopo l'invio con successo
-       
-      },
-      error => {
-        // Gestisce eventuali errori
-        console.error('Errore durante l\'invio del form:', error);
-      }
-    );
   }
 }
